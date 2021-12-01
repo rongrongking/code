@@ -1,0 +1,149 @@
+\section{素数与合数}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 掌握素数与合数的概念及素数的判定  \\ \hline
+		\textbf{教学重点：}       & 素数与合数的概念 \\ \hline
+		\textbf{教学难点：}       & 素数的判定质\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 2课时 \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{素数与合数的概念}
+\definition 若$a$为大于$1$的整数,如果$a$的正因数只有$1$和$a$自身,则称$a$为素数(或质数).若$a$有正的真因数,则称$a$为合数.
+
+\entry \textbf{e.g.}$2,3,5,7,11,\cdots$都是质数;$4,6,8,9,10,\cdots$都是合数.
+
+\remark 全体正整数被分成三类:数1(单独作一类)、素数和合数. 
+
+\theorem $a$是合数的充要条件是$a=bc$,其中$b,c\in\mathbb{N}_{+},1<b<a,1<c<a$.
+
+\proof (充分性证明)因为$a=bc,b,c\in\mathbb{N}_{+},1<b<a,1<c<a$
+
+所以$a>1$,则$a$的合数.
+
+(必要性证明)因为$a$是合数,所以一定有一个$b\in\mathbb{N}_{+}$且$1<b<a$,使$b\mid a$,即$a=bc$.又由于$a,b\in\mathbb{N}_{+}$,故$c\in\mathbb{N}_{+}$.因为$a>b$,所以$bc>b$,又因为$b>1$,所以$c>1$.
+
+由于$c\mid a,c,a\in\mathbb{N}_{+}$,故$c<a$,则$1<c<a$.
+
+结论成立.
+
+\example 求证:$173^{12}+4$是合数.
+
+\proof 只要找到一个不是$1$也不是它本身的正因数即可,可考虑试用配方法把它分解因式.
+\begin{equation*}
+	\begin{aligned}
+		\because 173^{12}+4 &=\left(173^{6}\right)^{2}+2^{2} \\
+		&=\left(173^{6}+2\right)^{2}-4 \times 173^{6} \\
+		&=\left(173^{6}+2\right)^{2}-\left(2 \times 173^{3}\right)^{2} \\
+		&=\left(173^{6}+2 \times 173^{3}+2\right)\left(173^{6}-2 \times 173^{3}+2\right),
+	\end{aligned}
+\end{equation*}
+
+$\therefore 173^{12}+4$是合数.
+
+\theorem 如果素数$p$是整数$a$的因数,则称$p$是$a$的素因数.
+
+素数在正整数中特别重要,一般常用字母$p$表示素数.
+
+\subsection{素数的判定}
+\theorem 任何大于$1$的正整数必有一个素因数.
+
+\proof 设$a$是大于$1$的正整数,由于$a$就是自身的因数,所以$a$必有大于$1$的因数.若$a$是素数,则定理1.6.1成立是显然的.若$a$不是素数,则它有正的真因数,设它们是$d_{1}, d_{2}, \cdots, d_{k}\left(d_{i}>1 ; i=1,2, \cdots, k\right)$,令$d$是其中最小的,若$d$不是素数,则存在$1<e_{1}, e_{2}<d$使得$d=e_{1} \cdot e_{2}$,因此$e_{1}$和$e_{2}$也是$a$的正的真因数,这与$d$的最小性矛盾.所以$d$是素数,因而$a$必有一个素因数.证毕.
+
+\corollary {\color{red}[推论1.6.1]}如果$a$是大于$1$的整数,则$a$的大于$1$的最小因数必为素数.
+
+\corollary {\color{red}[推论1.6.2]}合数$a$的最小素因数$p$满足$p \leqslant \sqrt{a}$.
+
+\proof 由于$a$是合数,于是有$a=p \cdot q$,其中$p$是$a$的最小素因数,$q \in \mathbb{N}$,由于$1<p \leqslant q<a$,从而 $p^{2} \leqslant a$,即$p \leqslant \sqrt{a}$.证毕.
+
+\corollary {\color{red}[推论1.6.3]}若大于$1$的整数$a$不能被任何适合$p \leqslant \sqrt{a}$的素数$p$整除,则$a$必为素数.
+
+\proof 反证法.若不然,由于$a>1$,则$a$必为合数,由推论1.6.2知,$a$的最小素因数$p$满足$p \leqslant \sqrt{a}$,这与$a$不能被任何适合$p \leqslant \sqrt{a}$的素数$p$整除矛盾,故$a$必为素数.证毕.
+
+\remark 根据推论1.6.3可得出求“不超过某个正整数$a$的所有素数”的方法
+
+\theorem {\color{red}[定理1.6.2]}设$p$为素数,$a$是任意一个整数,则或者$p$整除$a$,或者$p$与$a$互素.
+
+\proof 事实上,$p$与$a$的最大公约数$(p, a)$必整除$p$.由于$p$为素数,故$(p, a)=1$或者$(p, a)=p$,即$p$与$a$互素或者$p$整除$a$.证毕.
+
+\theorem {\color{red}[定理1.6.3]}设$p$为素数,$a, b$为整数,若$p \mid a b$,则$a, b$中至少有一个数被$p$整除.
+
+\proof 反证法.若$a, b$均不能被$p$整除,则由定理1.6.2知,$p$与$a, b$都互素,从而$p$与$a b$互素.这与$p \mid a b$矛盾.故$a, b$中至少有一个数被$p$整除.证毕.
+
+特别地,若$p$为素数,且$p \mid a^{n}(n \geqslant 1)$,则$p \mid a$.
+
+\example 求出不超过$30$的所有素数.
+
+\solve 先将不超过$30$的正整数排列如下：
+\begin{center}
+	\begin{tabular}{ccccccccccccccc}
+		\sout{1}  & 2 & 3 & \sout{4} & 5 & \sout{6} & 7 & \sout{8} & \sout{9} & \sout{10} & 11 & \sout{12} & 13 & \sout{14} & \sout{15} \\
+		\sout{16} & 17 & \sout{18} & 19 & \sout{20} & \sout{21} & \sout{22} & 23 & \sout{24} & \sout{25} & \sout{26} & \sout{27} & \sout{28} & 29 & \sout{30} \\
+	\end{tabular}
+\end{center}
+
+再按以下步骤进行:
+\begin{itemize}
+	\item[\ding{172}] 删去1,剩下的后面的第一个数是2,2是素数;
+	\item[\ding{173}] 删去2后面的被2整除的数,剩下的2后面的第一个数是3,3是素数;
+	\item[\ding{174}] 再删去3后面的被3整除的数,剩下的3后面的第一个数是5,5是素数;
+	\item[\ding{175}] 再删去5后面的被5整除的数,剩下的5后面的第一个数是7,7是素数;
+\end{itemize}
+按照以上步骤依次得到不超过30的素数:$2,3,5,7,11,13,17,19,23,29$.
+
+\remark 上述方法的理论依据是:由推论1.6.3可知,不超过30的合数必有一个不超过$\sqrt{30} \leqslant 6$的素因数,而不超过6的素数只有$2,3,5$,因此在删除了所有能被$2,3,5$整除的数之后剩下的数必为素数,这样就得到了不超过30的全部素数.
+
+此种寻找素数的方法称为\textbf{Eratosthenes筛法}.
+
+\example 判定$173$和$1957$是质数还是合数.
+
+\solve (1)因为$13<\sqrt{173}<14$,所以用不超过$13$的质数$2,3,5,7,11,13$依次去除$173$,发现都不能整除,所以$173$是质数.
+
+(2)因为$44<\sqrt{1957}<45$,所以用不超过$13$的质数从小到大依次去除$1957$,发现都不能整除,所以$1957$是质数.
+
+\example 判定$359$是质数还是合数.
+
+\solve 因为$18<\sqrt{359}<19$,所以用不超过$\sqrt{359}$的质数$2,3,5,7,11,13,$ $17$依次去除$359$,发现都不能整除,所以$359$是质数.
+
+\example 证明:素数有无穷多个.
+
+\proof \textbf{证法一}反证法.假设素数只有有限多个,设这有限个素数为$p_{1}, p_{2}, \cdots, p_{k}$.考虑数$a=p_{1} p_{2} \cdots p_{k}+1$,显然$a>1$,故$a$有素因数$p$.因为$p_{1}, p_{2}, \cdots, p_{k}$包含了全部的素数,故$p$必等于某个$p_{i}(1 \leqslant i \leqslant k)$,从而$p \mid p_{1} p_{2} \cdots p_{k}$,于是由$p \mid a$推得$p \mid 1$,从而$p=1$或$p=-1$,这与$p$是素数矛盾.因此,素数有无穷多个.
+
+\textbf{证法二}由于每个费马数$F_{n}=2^{2^{n}}+1(n=0,1,2, \cdots)$都大于$1$,故它至少有一个素因数.由1.3节例2知,任意两个费马数$\left(F_{m}, F_{n}\right)=1(m \neq n)$,因此,这些素因数必定是互不相同的.由于两两互素的费马数有无限多个,故素数有无穷多个.证毕.
+
+\example 证明:存在无穷多个正整数$a$,使得$n^{4}+a(n=1,2,3, \cdots)$都是合数.
+
+\proof 令$a=4 k^{4}(k=2,3, \cdots)$,则对任意的$n \in \mathbb{N}$,有
+\begin{equation*}
+	n^{4}+4 k^{4}=\left(n^{2}+2 k^{2}\right)^{2}-4 n^{2} k^{2}=\left(n^{2}+2 k^{2}+2 n k\right) \cdot\left(n^{2}+2 k^{2}-2 n k\right)
+\end{equation*}
+
+因为$n^{2}+2 k^{2}-2 n k=(n-k)^{2}+k^{2} \geqslant k^{2}>1$
+
+所以,对于任意的$k=2,3, \cdots$以及任意的$n \in \mathbf{N}, n^{4}+a$都是合数.
+
+\example 若$a>1, a^{n}-1$是素数,证明:$a=2$,并且$n$是素数.
+
+\proof 若$a>2$,则由
+\begin{equation*}
+	a^{n}-1=(a-1)\left(a^{n-1}+a^{n-2}+\cdots+1\right)
+\end{equation*}
+可知$a^{n}-1$是合数.所以$a=2$.
+
+若$n$是合数,则$n=x y(x>1, y>1)$,于是由
+\begin{equation*}
+	2^{x y}-1=\left(2^{x}-1\right)\left(2^{x(y-1)}+2^{x(y-2)}+\cdots+1\right)
+\end{equation*}
+以及$2^{x}-1>1$可知$2^{n}-1$是合数.所以当$2^{n}-1$是素数时,$n$必是素数.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      & P20习题1.6、1;2  \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}
+

@@ -1,0 +1,293 @@
+\section{最小公倍数}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 掌握最小公倍数的概念、性质及其求法  \\ \hline
+		\textbf{教学重点：}       & 最小公倍数的性质及其求法 \\ \hline
+		\textbf{教学难点：}       & 最小公倍数的性质\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 4课时 \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{最小公倍数的概念}
+
+$3\mid 48,6\mid 48$,可见,$48$是$3,6$公有的倍数,我们称之为$3,6$的一个公倍数.
+
+\definition 设$a_{k}(k=1,2,\cdots,n)$,$m$都是整数,若$a_{k}\mid m$,则$m$叫作$a_{1},a_{2},\cdots,a_{n}$的公倍数.
+
+\textbf{e.g.}$\pm 6,\pm 12,\pm 24,\pm 48,\cdots$都是$2,3,6$三个数的公倍数,其中,$6$是这些公倍数中最小的正整数,叫作$2,3,6$的最小公倍数,记作$[2,3,6]=6$.
+
+可见,几个数的公倍数有无穷多个,几个数的最小公倍数有且只有一个.
+
+\definition 几个非零整数$a_{1},a_{2},\cdots,a_{n}$公有的倍数中最小的正整数,叫作$a_{1},a_{2},\cdots,a_{n}$的最小公倍数,记作$[a_{1},a_{2},\cdots,a_{n}]$.
+
+\theorem 几个非零整数$a_{1},a_{2},\cdots,a_{n}$的最小公倍数唯一存在.
+
+\proof \textit{存在性}
+
+显然,$a_{1}a_{2}\cdots a_{n}$是$a_{1},a_{2},\cdots,a_{n}$的一个公倍数,这说明$a_{1},a_{2},\cdots,a_{n}$的公倍数存在.根据最小数原理,其正的公倍数中必存在最小正整数,即存在最小公倍数.
+
+\textit{唯一性}
+
+设$[a_{1},a_{2},\cdots,a_{n}]=m,[a_{1},a_{2},\cdots,a_{n}]=q$.
+
+若$m<q$,则与$[a_{1},a_{2},\cdots,a_{n}]=q$矛盾;
+
+若$q>m$,则与$[a_{1},a_{2},\cdots,a_{n}]=m$矛盾.
+
+故$m=q$.即$a_{1},a_{2},\cdots ,a_{n}$的最小公倍数唯一.
+
+\theorem 若$a_{1},a_{2},\cdots,a_{n}$均为非零整数,则
+\begin{equation*}
+	[a_{1},a_{2},\cdots,a_{n}]=[|a_{1}|,|a_{2}|,\cdots,|a_{n}|].
+\end{equation*}
+
+该定理说明,求几个非零整数的最小公倍数可化为求几个正整数的最小公倍数.
+
+\theorem (i)$[a,1]=|a|,[a,a]=|a|$,其中$a\neq 0$;
+
+(ii)$[a,b]=[b,a]$;
+
+(iii)若$a\mid b$,则$[a,b]=|b|$.
+
+\subsection{最小公倍数的性质}
+\theorem [推论1.4.3]设$m$是$a_{1},a_{2},\cdots,a_{n}$的一个公倍数,$q$是$a_{1},a_{2},\cdots,a_{n}$的任意一个公倍数,则$m=[a_{1},a_{2},\cdots,a_{n}]\Leftrightarrow m\mid q$.\label{Thm5.6}
+
+\proof \textit{必要性}.若$m\nmid q$,因为$m=[a_{1},a_{2},\cdots,a_{n}]$,所以$m<q$.设$q=mx+r(\leqslant r<m)$.因为$a_{k}\mid m,a_{k}\mid q$,所以$a_{k}\mid(q-mx)=r(k=1,2,\cdots,n)$.于是$r$也是$a_{1},a_{2},\cdots,a_{n}$的一公倍数,而$r<m$,这与$m=[a_{1},a_{2},\cdots,a_{n}]$矛盾.故$m\mid q$
+
+\textit{充分性}.设$[a_{1},a_{2},\cdots,a_{n}]=p\neq m$.因为$m\mid q$,$p$是$a_{1},a_{2},\cdots,a_{n}$的公倍数,所以$m\mid p,m<p$,这与$[a_{1},a_{2},\cdots,a_{n}]=p$矛盾.故$p=m$.
+
+\theorem 设$a_{p}\mid m(p=1,2,\cdots,n)$,则
+\begin{equation*}
+	m=[a_{1},a_{2},\cdots,a_{n}]\Leftrightarrow\left( \frac{m}{a_{1}},\frac{m}{a_{2}},\cdots,\frac{m}{a_{2}}\right) =1
+\end{equation*}\label{Thm5.7}
+
+\proof \textit{必要性.}设$\left( \dfrac{m}{a_{1}},\dfrac{m}{a_{2}},\cdots,\dfrac{m}{a_{2}}\right) =q>1$,则$q\mid\dfrac{m}{a_{k}}$.所以$qa_{k}\mid m$.于是$a_{k}\mid\dfrac{m}{q}$,这说明$\dfrac{m}{q}$是$a_{k}$的公倍数$(p=1,2,\cdots,n)$.而$\dfrac{m}{q}<m$,与$m=[a_{1},a_{2},\cdots,a_{n}]$矛盾,故
+\begin{equation*}
+	\left( \frac{m}{a_{1}},\frac{m}{a_{2}},\cdots,\frac{m}{a_{2}}\right) =1
+\end{equation*}
+
+\textit{充分性.}设$[a_{1},a_{2},\cdots,a_{n}]=k<m$,则由定理\ref{Thm5.6}可知,$k\mid m$.设$m=kq(q>1)$,则由$a_{p}\mid k(p=1,2,\cdots,n)$,得$a_{p}\mid\dfrac{m}{q}$,于是$q\mid\dfrac{m}{a_{p}}$,则$q$是$\dfrac{m}{a_{k}}(p=1,2,\cdots,n)$的大于1的公因数,这与$\left( \dfrac{m}{a_{1}},\dfrac{m}{a_{2}},\cdots,\dfrac{m}{a_{2}}\right) =1$矛盾.故$m=[a_{1},a_{2},\cdots,a_{n}]$.
+
+\theorem [推论1.4.2]$[ka_{1},ka_{2},\cdots,ka_{n}]=k[a_{1},a_{2},\cdots,a_{n}]$
+
+\theorem [定理1.4.2]对任意正整数$a,b$,有$[a,b]=\dfrac{ab}{(a,b)}$.
+
+\proof 设$[a,b]=m$,由定理\ref{Thm5.7}得$\left(\dfrac{m}{a}, \dfrac{m}{b}\right)=1$,故
+\begin{equation*}
+	\left(\frac{m b}{a b}, \frac{m a}{a b}\right)=1,\left(\frac{b}{\frac{a b}{m}}, \frac{a}{\frac{a b}{m}}\right)=1
+\end{equation*}
+由定理1.3.4得$(a, b)=\dfrac{a b}{m}$,从而$m=\dfrac{a b}{(a, b)}$,即
+\begin{equation*}
+	[a,b]=\frac{a b}{(a, b)}.
+\end{equation*}
+
+\entry \textbf{注:}两个非零整数的最小公倍数的问题实质上可化归为它们的最大公因数问题.
+
+\corollary [推论1.4.1]若$a\mid m,b\mid m$,则$[a, b]\mid m$.\label{Cor5.11}
+
+\entry 推论\ref{Cor5.11}刻画了最小公倍数的一个重要属性:两个非零整数的最小公倍数不但是最小的公倍数,而且是这两个整数的任意公倍数的因数.
+
+\corollary [推论1.4.2]设$m,a,b$是正整数,则$[ma.mb]=m[a,b]$.
+
+\proof 由定理1.4.2及定理1.3.4得到
+\begin{equation*}
+	[m a, m b]=\frac{m^{2} a b}{(m a, m b)}=\frac{m^{2} a b}{m(a, b)}=\frac{m a b}{(a, b)}=m[a, b].
+\end{equation*}
+
+\corollary 若$(a,b)=1$,则$[a,b]=(a,b)$.
+
+\corollary $[a^{n},b^{n}]=[a,b]^{n}$.
+
+\proof $[a^{n},b^{n}]=\dfrac{a^{n}b^{n}}{(a^{n},b^{n})}=\dfrac{a^{n}b^{n}}{(a,b)^{n}}=\left( \dfrac{ab}{(a,b)}\right)^{n}=[a,b]^{n} $.
+
+\corollary 若$(a,b)=1$,则$[a,bc]=b[a,c]$.
+
+\theorem [定理1.4.3]对于任意$n$个非负整数$a_{1},a_{2},\cdots,a_{n}$,记
+\begin{equation*}
+	\left[a_{1}, a_{2}\right]=m_{2},\left[m_{2}, a_{3}\right]=m_{3}, \cdots,\left[m_{n-2}, a_{n-1}\right]=m_{n-1},\left[m_{n-1}, a_{n}\right]=m_{n}
+\end{equation*}
+则$\left[a_{1}, a_{2}, \cdots, a_{n}\right]=m_{n}$.
+
+\proof 由于
+\begin{equation*}
+	\begin{split}
+		&m_{n}=\left[m_{n-1}, a_{n}\right] \Rightarrow m_{n-1}\left|m_{n}, a_{n}\right| m_{n} \\
+		&m_{n-1}=\left[m_{n-2}, a_{n-1}\right] \Rightarrow m_{n-2}\left|m_{n-1}\right| m_{n}, a_{n}\left|m_{n}, a_{n-1}\right| m_{n-1} \mid m_{n} \\
+		&m_{n-2}=\left[m_{n-3}, a_{n-2}\right] \Rightarrow m_{n-3}\left|m_{n-2}\right| m_{n}, a_{n}\left|m_{n}, a_{n-1}\right| m_{n}, a_{n-2} \mid m_{n} \\
+		&\quad \cdots \\
+		&m_{2}=\left[a_{1}, a_{2}\right] \Rightarrow a_{n}\left|m_{n}, \cdots, a_{2}\right| m_{n}, a_{1} \mid m_{n}
+	\end{split}
+\end{equation*}
+因此,$m_{n}$是$a_{1}, a_{2}, \cdots, a_{n}$的一个公倍数.
+
+又对于$a_{1}, a_{2}, \cdots, a_{n}$的任何公倍数$m$,反复利用推论1.4 .1及$m_{2}, \cdots,$ $ m_{n}$的定义,得
+\begin{equation*}
+	m_{2}\left|m, m_{3}\right| m, \cdots, m_{n} \mid m
+\end{equation*}
+所以$m_{n} \leqslant m$,即$m_{n}$是$a_{1}, a_{2}, \cdots, a_{n}$最小的正的公倍数. 
+
+\theorem [定理1.4.4] 对于任意非零整数$a_{1}, a_{2}, \cdots, a_{n}$及整数$k(1 \leqslant k \leqslant n)$.证明 :
+\begin{equation*}
+	\left[a_{1}, a_{2}, \cdots, a_{n}\right]=\left[\left[a_{1}, \cdots, a_{k}\right],\left[a_{k+1}, \cdots, a_{n}\right]\right].
+\end{equation*}
+
+\proof 因为$\left[a_{1}, a_{2}, \cdots, a_{n}\right]$是$a_{1}, \cdots, a_{k}$和$a_{k+1}, \cdots, a_{n}$的公倍数,所以
+\begin{equation*}
+	\left[a_{1}, \cdots, a_{k}\right] \mid\left[a_{1}, a_{2}, \cdots, a_{n}\right]
+\end{equation*}
+且$\left[a_{k+1}, \cdots, a_{n}\right] \mid\left[a_{1}, a_{2}, \cdots, a_{n}\right]$
+因此,由推论1. 4.3得
+\begin{equation}\label{equ1.8}
+	\left[\left[a_{1}, \cdots, a_{k}\right],\left[a_{k+1}, \cdots, a_{n}\right]\right] \mid\left[a_{1}, a_{2}, \cdots, a_{n}\right]
+\end{equation}
+又对于任意的 $a_{i}(1 \leqslant i \leqslant n),$ 显然
+\begin{equation*}
+	a_{i} \mid\left[\left[a_{1}, \cdots, a_{k}\right],\left[a_{k+1}, \cdots, a_{n}\right]\right]
+\end{equation*}
+所以,由推论 1.4 .3 可知
+\begin{equation*}
+	\left[a_{1}, a_{2}, \cdots, a_{n}\right] \mid\left[\left[a_{1}, \cdots, a_{k}\right],\left[a_{k+1}, \cdots, a_{n}\right]\right]
+\end{equation*}
+综合上式及式\eqref{equ1.8},定理得证. 
+
+\textbf{e.g.}$[4,8,12]=[[4,8],12]=[8,12]=24$.
+
+$[2,4,9,8,27]=[[2,4,8],[9,27]]=[8,27]=216$.
+
+\theorem 若$(h,a_{m}=1)(m=k+1,k+2,\cdots,n)$,则
+\begin{equation*}
+	[ha_{1},ha_{2},\cdots,ha_{k},a_{k+1},\cdots,a_{n}]=h[a_{1},a_{2},\cdots,a_{k},a_{k+1},\cdots,a_{n}]
+\end{equation*}
+
+\proof 因为$(h,a_{m}=1)(m=k+1,k+2,\cdots,n)$,所以$(h,a_{k+1}\cdots a_{n})=1$.于是$a_{k+1}\cdots a_{n}$是$a_{k+1},\cdots,a_{n}$的公倍数,所以$[a_{k+1},\cdots,a_{n}]\mid a_{k+1}\cdots a_{n}$,故$(h,[a_{k+1},\cdots,a_{n}])=1$.又由5.8定理和5.18定理可知,
+\begin{equation*}
+	\begin{split}
+		&[ha_{1},ha_{2},\cdots,ha_{k},a_{k+1},\cdots,a_{n}]\\
+		=&[[ha_{1},ha_{2},\cdots,ha_{k}],[a_{k+1},\cdots,a_{n}]]\\
+		=&[h[a_{1},a_{2},\cdots,a_{k}],[a_{k+1},\cdots,a_{n}]]\\
+		=&h[[a_{1},a_{2},\cdots,a_{k}],[a_{k+1},\cdots,a_{n}]]\\
+		=&h[a_{1},a_{2},\cdots,a_{k},a_{k+1},\cdots,a_{n}].
+	\end{split}
+\end{equation*}
+\begin{equation*}
+	\begin{split}
+		\textbf{e.g.}&[2,4,12,9,17,18]\\
+		=&2\times[1,2,6,9,17,9]\\
+		=&2\times 2\times[1,1,3,9,17,9]\\
+		=&4\times 3\times [1,1,1,3,17,3]\\
+		=&12\times 3\times[1,1,1,1,17,1]\\
+		=&36\times 17=612.
+	\end{split}
+\end{equation*}
+
+\example 设 $a, b, c$ 是正整数,证明 $:[a, b, c](a b, b c, c a)=a b c$.
+
+\proof 由定理 1.4 .3和定理 1.4 .2,有
+\begin{equation}\label{equ1.9}
+	[a, b, c]=[[a, b], c]=\frac{[a, b] c}{([a, b], c)}
+\end{equation}
+由推论 1.4.2 及定理 1.3. 4,有
+\begin{equation}\label{equ1.10}
+	\begin{split}
+		(a b, b c, c a)=&(a b,(b c, c a))=(a b, c(a, b))=\\
+		&\left(a b, \frac{a b c}{[a, b]}\right)=\frac{(a b[a, b], a b c)}{[a, b]}=\frac{a b([a, b], c)}{[a, b]}
+	\end{split}
+\end{equation}
+综合式\eqref{equ1.9}与式\eqref{equ1.10}得到所证结论. 
+
+\example 设$a, b, c$是正整数,证明:$[a, b, c][a b, b c, c a]=[a, b][b, c][c, a]$.
+
+\proof 由推论 $1.4 .2,$ 有
+\begin{equation*}
+	\begin{split}
+		[a, b, c][a b, b c, c a]=&[[a, b, c] a b,[a, b, c] b c,[a, b, c] c a]=\\
+		&\left[\left[a^{2} b, a b^{2}, a b c\right],\left[a b c, b^{2} c, b c^{2}\right],\left[a^{2} c, a b c, a c^{2}\right]\right]=\\
+		&\left[a^{2} b, a b^{2}, a b c, a b c, b^{2} c, b c^{2}, a^{2} c, a b c, a c^{2}\right]=\\
+		&\left[a b c, a^{2} b, a^{2} c, b^{2} c, b^{2} a, c^{2} a, c^{2} b\right]
+	\end{split}
+\end{equation*}
+以及
+\begin{equation*}
+	\begin{aligned}
+		[a, b][b, c][c, a]=&[[a, b] b,[a, b] c][c, a]=\left[a b, b^{2}, a c, b c\right][c, a]=\\
+		&\left[a b[c, a], b^{2}[c, a], a c[c, a], b c[c, a]\right]=\\
+		&\left[a b c, a^{2} b, b^{2} c, b^{2} a, a c^{2}, a^{2} c, b c^{2}, b c a\right]=\\
+		&\left[a b c, a^{2} b, a^{2} c, b^{2} c, b^{2} a, c^{2} a, c^{2} b\right]
+	\end{aligned}
+\end{equation*}
+综上即得结论. 
+
+\subsection{最小公倍数的求法}
+根据最小公倍数的定义和性质,对照最大公因数的求法,可以得到几个求最小公倍 数的方法.
+
+(1)分解质因数法. 
+
+根据定义和定理3可知,几个数的最小公倍数首先是这几个数的一个公倍数,其 次,它又是这几个数的任意公倍数的因数. 由此可以得到求几个数最小公倍数的分解质 因数法,其步骤如下:
+\begin{enumerate}
+	\item 写出各数的标准分解式;
+	\item 写出各分解式中所有的质因数及其最高次数,并把得到的幕连乘起来.
+\end{enumerate}
+
+\example 求 $[735,108,24]$.
+
+\solve 因为 $735=3 \times 5 \times 7^{2}, 108=2^{2} \times 3^{3}, 24=2^{3} \times 3,$ 所以
+\begin{equation*}
+	[735,108,24]=2^{3} \times 3^{3} \times 5 \times 7^{2}=52920
+\end{equation*}
+
+(2) 提取公因数法.
+
+根据定理 5、定理 6 推论和定理 8,求几个数的最小公倍数可以用提取公因数法,其步骤如下:
+\begin{enumerate}
+	\item 先提取这几个数的最大公因数(各商数互质但不一定两两互质) ;
+	\item 在不互质的商数中提取公因数,其他商数照写下来,直到各商数两两互质为止;
+	\item 把提取的各数及各商数连乘起来.
+\end{enumerate}
+
+\example 求$[62, 48,378]$.
+
+\solve
+\begin{equation*}
+	\begin{split}
+		[62, 48,378]&=2 \times[31,24,189]=2 \times 3 \times[31,8,63] \\ 
+		&=6 \times 31 \times 8 \times 63=93744 
+	\end{split}
+\end{equation*}
+这一过程通常简写成下面的形式,叫作短除式:
+
+
+\begin{center}
+	\begin{table}[htb]
+	\begin{tabular}{lllll}
+		\multicolumn{1}{l|}{2} &                        & 62 & 48 & 378 \\ \cline{2-5} 
+		                       & \multicolumn{1}{l|}{3} & 31 & 24 & 189 \\ \cline{3-5} 
+			                   &                        & 31 & 8  & 63 
+	\end{tabular}
+\end{table}
+\end{center}
+
+因为$31,8,63$两两互质, 所以$[62,48,378]=2 \times 3 \times 31 \times 8 \times 63=93744$.
+
+(3)先求最大公因数法.
+
+根据定理 6 ,通过 $[a, b](a, b)=a b,$ 先求 $(a, b)$. 
+
+此法一般用于求公因数不明显的几个数的最小公倍数.
+
+\example 求$[24 871,3468]$.
+
+\solve 由辗转相除法求得$(24871,3468)=17$, 从而
+\begin{equation*}
+	[24871,3468]=24871\times 3468\div 17=5073684.
+\end{equation*}
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      & P11习题1.3、2;3;4 \quad P17习题1.5、1;2  \\ \hline
+		\textbf{教学后记：}  & \vspace{3ex} \\ \hline
+	\end{tabular}
+\end{table}

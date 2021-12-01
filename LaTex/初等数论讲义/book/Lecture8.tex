@@ -1,0 +1,159 @@
+\section{函数$[x]$与$\{x\}$及$n !$的标准分解式}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 了解算术基本定理  \\ \hline
+		\textbf{教学重点：}       & 算术基本定理 \\ \hline
+		\textbf{教学难点：}       & 算术基本定理\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 2课时 \\ \hline
+	\end{tabular}
+\end{table}
+\definition 设$x$是实数,以$[x]$表示不超过$x$的最大整数,称$[x]$为$x$的\textbf{整数部分},称$\{x\}=x-[x]$为$x$的\textbf{小数部分}.
+
+\entry 如$:[\pi]=3,[-\pi]=-4,\left[\dfrac{1}{3}\right]=0,\left\{-\dfrac{1}{5}\right\}=\dfrac{4}{5}$.
+
+\theorem 设$x$与$y$是实数,则:
+\begin{enumerate}[itemindent=2em]
+	\item[(i)] $0 \leqslant\{x\}<1, x-1<[x] \leqslant x<[x]+1$
+	\item[(ii)] $x \leqslant y \Rightarrow[x] \leqslant[y]$;
+	\item[(iii)] 若 $m$ 是整数,则 $[m+x]=m+[x],\{m+x\}=\{x\}$;
+	\item[(iv)] $[x+y]=\begin{cases}{[x]+[y],} & \text{若}\{x\}+\{y\}<1 \\ {[x]+[y]+1,} & \text{若}\{x\}+\{y\} \geqslant 1\end{cases}$,即$[x]+[y] \leqslant[x+y] \leqslant[x]+[y]+1$,其中等号不能同时成立. 
+	\item[(v)]$\begin{cases}-[x], & \text{若} x \in \mathbb{Z} \\ -[x]-1, & \text{若} x \notin \mathbb{Z}\end{cases}$,
+\end{enumerate}
+
+\proof (i),(ii),(iii)可由定义直接推出.
+
+(iv)由于$[x+y]=[[x]+\{x\}+[y]+\{y\}]=[x]+[y]+[\{x\}+\{y\}]$,若$\{x\}+\{y\}<1$,则$[\{x\}+\{y\}]=0$,故 $[x+y]=[x]+[y]$;若$\{x\}+\{y\} \geqslant 1$,则$[\{x\}+\{y\}]=1$,故$[x+y]=[x]+[y]+1$.由此(iv)成立.
+
+(v)因为$[-x]=[-([x]+\{x\})]=-[x]+[-\{x\}]$,由于$0 \leqslant\{x\}<1$,因而$-1<-\{x\} \leqslant 0$.若$x \in \mathbb{Z}$,则$[-\{x\}]=0$;若$x \notin \mathbb{Z}$,则$[-\{x\}]=-1$.证毕.
+
+\theorem 设$a$与$b$是正整数,则在$1,2, \cdots, a$中能被$b$整除的整数有$\left[\dfrac{a}{b}\right]$个.
+
+\proof 能被$b$整除的正整数是$b, 2 b, 3 b, \cdots$,因此,若数$1,2, \cdots, a$中能被$b$整除的整数$k$个,则$k b \leqslant a<(k+1) b \Rightarrow k \leqslant \frac{a}{b}<k+1 \Rightarrow k=\left[\dfrac{a}{b}\right]$.证毕.
+
+\entry 由定理1.8.2可知,若$b$是正整数,那么对于任意整数$a$,有
+\begin{equation*}
+	a=b \cdot\left[\frac{a}{b}\right]+b \cdot\left\{\frac{a}{b}\right\}
+\end{equation*}
+即在带余数除法$a=b q+r(0 \leqslant r<b)$中有$q=\left[\dfrac{a}{b}\right], r=b\left\{\dfrac{a}{b}\right\}$.
+
+\theorem 设$n$是正整数,$n !$的标准分解式为$n !=p_{1}^{\alpha_{1}} p_{1}^{a_{2}} \cdots p_{k}^{a_{k}}$,则素因数$p_{i}$ 的指数为
+\begin{equation}\label{equ1.27}
+	\alpha_{i}=\sum_{r=1}^{\infty}\left[\frac{n}{p_{i}^{r}}\right]
+\end{equation}
+
+\proof 对于任意固定的素数$p$,以$p(k)$表示在$k$的标准分解式中$p$的指数,则
+\begin{equation*}
+	p(n !)=p(1)+p(2)+\cdots+p(n)
+\end{equation*}
+以$n_{j}$表示 $p(1), p(2), \cdots, p(n)$中素数$p$的指数等于$j$的数的个数,则
+\begin{equation}\label{equ1.28}
+	p(n !)=1 \cdot n_{1}+2 \cdot n_{2}+3 \cdot n_{3}+\cdots
+\end{equation}
+显然,$n_{3}$就是在$1,2, \cdots, n$中满足$p^{j} \mid a$且$\left.p^{j+1}\right\rangle a$的整数$a$的个数,所以,由定理1.8 .2有
+\begin{equation*}
+	n_{j}=\left[\frac{n}{p^{j}}\right]-\left[\frac{n}{p^{j+1}}\right]
+\end{equation*}
+将上式代入式\eqref{equ1.28},得到
+\begin{equation*}
+	\begin{split}
+		p(n !)&=1 \cdot\left(\left[\frac{n}{p}\right]-\left[\frac{n}{p^{2}}\right]\right)+2 \cdot\left(\left[\frac{n}{p^{2}}\right]-\left[\frac{n}{p^{3}}\right]\right)+3 \cdot\left(\left[\frac{n}{p^{3}}\right]-\left[\frac{n}{p^{4}}\right]\right)+\cdots\\
+		&=\sum_{r=1}^{\infty}\left[\frac{n}{p^{r}}\right]
+	\end{split}
+\end{equation*}
+
+证毕.
+
+\corollary 设$n$是正整数,则$n !=\displaystyle{\prod_{p \leqslant n}} p^{\mathop{\sum}\limits_{r=1}^{\infty}\left[\frac{n}{p^{r}}\right]}$,其中$\displaystyle{\prod_{p \leqslant n}}$表示对不超过$n$的所有素数$p$求积.
+
+\theorem {\color{red}[定理1.8.4]}设$n$是正整数,$1 \leqslant k \leqslant n-1$,则
+\begin{equation}\label{equ1.29}
+	\mathrm{C}_{n}^{k}=\frac{n !}{k !(n-k) !} \in \mathbf{N}
+\end{equation}
+若$n$是素数,则$n \mid \mathrm{C}_{n}^{k}(1 \leqslant k \leqslant n-1)$.
+
+\proof 由定理1.8.3,对于任意素数$p$,整数$n !, k !$与$(n-k) !$的标准分解式中所含的素因数$p$的指数分别是
+\begin{equation*}
+	\sum_{r=1}^{\infty}\left[\frac{n}{p^{r}}\right], \quad \sum_{r=1}^{\infty}\left[\frac{k}{p^{r}}\right], \quad \sum_{r=1}^{\infty}\left[\frac{n-k}{p^{r}}\right]
+\end{equation*}
+
+利用定理1.8.1的性质(iv)可知
+\begin{equation*}
+	\left[\frac{k+(n-k)}{p^{r}}\right]=\left[\frac{n}{p^{r}}\right] \geqslant\left[\frac{k}{p^{r}}\right]+\left[\frac{n-k}{p^{r}}\right]
+\end{equation*}
+
+故$\displaystyle{\sum_{r=1}^{\infty}}\left[\dfrac{n}{p^{r}}\right] \geqslant \displaystyle{\sum_{r=1}^{\infty}}\left[\dfrac{k}{p^{r}}\right]+\displaystyle{\sum_{r=1}^{\infty}}\left[\dfrac{n-k}{p^{r}}\right]$
+
+因此,$\mathrm{C}_{n}^{k}$是整数.
+
+若$n$是素数,则对于$1 \leqslant k \leqslant n-1$,有$(n, k !)=1,(n,(n-k) !)=1 \Rightarrow(n, k !(n-k) !)=1$,由此及
+\begin{equation*}
+	\mathrm{C}_{n}^{k}=\frac{n \cdot(n-1) !}{k !(n-k) !} \in \mathbb{N}
+\end{equation*}
+推出$k !(n-k) ! \mid(n-1) !$,从而$n \mid \mathrm{C}_{n}^{k}$.证毕.
+
+\example 设$x$与$y$是实数, 证明：
+\begin{equation}\label{equ1.30}
+	[2 x]+[2 y] \geqslant[x]+[x+y]+[y]
+\end{equation}
+
+\solve 设$x=[x]+\alpha(0 \leqslant \alpha<1), y=[y]+\beta(0 \leqslant \beta<1)$,则
+\begin{equation}\label{equ1.31}
+	[x]+[x+y]+[y]=2[x]+2[y]+[\alpha+\beta]
+\end{equation}
+及
+\begin{equation}\label{equ1.32}
+	[2 x]+[2 y]=2[x]+2[y]+[2 \alpha]+[2 \beta]
+\end{equation}
+
+如果$[\alpha+\beta]=0$,那么显然有$[\alpha+\beta] \leqslant[2 \alpha]+[2 \beta]$.
+
+如果$[\alpha+\beta]=1$,那么$\alpha$与$\beta$中至少有一个不小于$\dfrac{1}{2}$,于是
+\begin{equation*}
+	[2 \alpha]+[2 \beta] \geqslant 1=[\alpha+\beta]
+\end{equation*}
+因此,无论$[\alpha+\beta]=0$或$1$,都有$[\alpha+\beta] \leqslant[2 \alpha]+[2 \beta]$,由此及式\eqref{equ1.31}和式\eqref{equ1.32}可推出式\eqref{equ1.30}.
+
+\example 设$n$是正整数,$x$是任一实数,证明：
+\begin{equation}\label{equ1.33}
+	[x]+\left[x+\frac{1}{n}\right]+\left[x+\frac{2}{n}\right]+\cdots+\left[x+\frac{n-1}{n}\right]=[n x]
+\end{equation}
+
+\solve 设$x=[x]+\alpha(0 \leqslant \alpha<1)$,则有
+\begin{equation*}
+	\begin{split}
+		&[x]+\left[x+\frac{1}{n}\right]+\left[x+\frac{2}{n}\right]+\cdots+\left[x+\frac{n-1}{n}\right] \\
+		=&[[x]+\alpha]+\left[[x]+\alpha+\frac{1}{n}\right]+\cdots+\left[[x]+\alpha+\frac{n-1}{n}\right] \\
+		=&n[x]+[\alpha]+\left[a+\frac{1}{n}\right]+\cdots+\left[\alpha+\frac{n-1}{n}\right]
+	\end{split}
+\end{equation*}
+
+又$[n x]=[n([x]+\alpha)]=n[x]+[n \alpha]$
+
+故只须证明
+\begin{equation}\label{equ1.34}
+	[\alpha]+\left[\alpha+\frac{1}{n}\right]+\cdots+\left[\alpha+\frac{n-1}{n}\right]=[n \alpha] \quad(0 \leqslant \alpha<1)
+\end{equation}
+
+事实上,若$0 \leqslant \alpha<\dfrac{1}{n}$,则 $[\alpha]+\left[\alpha+\dfrac{1}{n}\right]+\cdots+\left[\alpha+\dfrac{n-1}{n}\right]=0=[n \alpha]$.
+
+若$\dfrac{i}{n} \leqslant \alpha<\dfrac{i+1}{n}(1 \leqslant i \leqslant n-1)$,则
+\begin{enumerate}[itemindent=2em]
+	\item[\ding{172}] 当$1 \leqslant i \leqslant n-i-1$时,恒有$\left[a+\frac{i}{n}\right]=0$;
+	\item[\ding{173}] 当$n-i \leqslant i \leqslant n-1$时,恒有$\left[\alpha+\frac{i}{n}\right]=1$.
+\end{enumerate}
+
+故 $[\alpha]+\left[\alpha+\dfrac{1}{n}\right]+\cdots+\left[\alpha+\dfrac{n-1}{n}\right]=i=[n \alpha]$.因而,恒有式\eqref{equ1.34}成立.
+
+由式\eqref{equ1.34}可知式\eqref{equ1.33}成立.证毕.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      &   \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}

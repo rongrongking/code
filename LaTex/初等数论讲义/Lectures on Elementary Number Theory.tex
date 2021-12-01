@@ -1,0 +1,34 @@
+\documentclass[12pt,a4paper,openany,towside,cap,hyperref]{ctexbook}
+\input{setup/package.tex}   %引用宏包所在位置
+\input{setup/format.tex}    %格式所在位置
+
+\begin{document}
+\pagenumbering{Roman}    %Roman字体书写页码
+%-------------------封面等-----------------------
+\include{preface/cover}                         %封面
+%------------目录部分---------------------------------
+\setcounter{page}{1}   %重新开始页码
+\renewcommand\contentsname{目\qquad 录}
+%------下面善三行去掉了目录首页码------
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+%------------------------------------------------
+\setcounter{tocdepth}{2}
+\tableofcontents                                    %目录
+\mainmatter    %前言和目录页码结束，正文重新开始设置页码
+%------------正文开始------------------
+\include{book/Lecture1}
+\include{book/Lecture2}
+\include{book/Lecture3}
+\include{book/Lecture4}
+\include{book/Lecture5}
+\include{book/Lecture6}
+\include{book/Lecture7}
+\include{book/Lecture8}
+\include{book/Lecture9}
+\include{book/Lecture10}
+%-----------------------------------------正文结束------------------------------
+\clearpage
+\end{document}
+

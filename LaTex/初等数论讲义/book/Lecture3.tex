@@ -1,0 +1,216 @@
+\section{带余数除法}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 理解带余数除法  \\ \hline
+		\textbf{教学重点：}       & 带余数除法 \\ \hline
+		\textbf{教学难点：}       & 带余数除法的证明\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 4课时 \\ \hline
+	\end{tabular}
+\end{table}
+\theorem \textbf{(带余数除法)}设$a$与$b$是两个整数,$b\neq 0$,则存在唯一的一对整数$q$和$r$,使得
+\begin{equation}\label{equ1.1}
+	a=bq+r(0\leqslant r<|b|)
+\end{equation}
+
+此外,$b\mid a$的充分必要条件是$r=0$.
+
+\theorem \textbf{(Peano公理)}设$\mathbb{N}$是一个非空集合,满足以下条件:
+\begin{enumerate}[itemindent=2em]
+	\item[(i)] 对每一个元素$n\in\mathbb{N}$,一定有唯一的一个$\mathbb{N}$中的元素与之对应,这个元素记做$n^{+}$,称为$n$的后继元素(或后继);
+	\item[(ii)] 有元素$e\in\mathbb{N}$,它不是$\mathbb{N}$中任一元素的后继;
+	\item[(iii)] $\mathbb{N}$中的任意一个元素至少是一个元素的后继,即从$a^{+}=b^{+}$,一定可推出$a=b$;
+	\item[(iv)] (归纳公理)设$S$是$\mathbb{N}$的一个子集合,$e\in S$,如果$n\in S$,必有$n^{+}\in S$,那么$S=\mathbb{N}$.
+\end{enumerate}
+这样的集合$\mathbb{N}$称为自然数集合,它的元素称为自然数.
+
+\theorem \textbf{(最小自然数原理)}设$T$是$\mathbb{N}$的一个非空子集,那么,必有$t_{0}\in T$,使对任意的$t\in T$有$t_{0}\leqslant t$,即$t_{0}$是$T$中的最小自然数.
+
+\theorem \textbf{(最大自然数原理)}设$M$是$\mathbb{N}$的一个非空子集,若$M$有上界,即存在$a\in\mathbb{N}$,使对任意的$m\in M$有$m\leqslant a$,那么,必有$m_{0}\in M$,使对任意的$m\in M$有$m\leqslant m_{0}$,即$m_{0}$是$M$中的最大自然数.
+
+\proof \textit{(定理1的证明)}\textbf{存在性}\quad 若$b \mid a$,则存在$q \in \mathbb{Z}$,使得$a=b q$,此时取$r=0$,即式\eqref{equ1.1}成立.
+
+若$b\mid a$,考虑集合$A=\{a+k b \mid k \in \mathbb{Z}\}$.在集合$A$中有无限多个正整数,由自然数的最小数原理知,$A$中必有最小的正整数.设这个最小的正整数为$r=a+k_{0} b$,则必有结论:
+\begin{equation}\label{equ1.2}
+	0<r<|b|
+\end{equation}
+事实上,若不然,就有$r \geqslant|b|$.因为$b\mid a$, 所以$r \neq|b|$,从而$r>|b|$,故
+\begin{equation*}
+	r_{1}=r-|b|=a+k_{0} b-|b|>0
+\end{equation*}
+这样就有$r_{1} \in A$且$0<r_{1}<r$,这与$r$的最小性矛盾.所以,式\eqref{equ1.2}成立.取$q=-k_{0}$,知式\eqref{equ1.1}成立.存在性得证.
+
+\textbf{唯一性}\quad 假设存在两对整数$q^{\prime}, r^{\prime}$与$q^{\prime \prime}, r^{\prime \prime}$都使得式\eqref{equ1.1}成立,即
+\begin{equation*}
+	a=q^{\prime \prime} b+r^{\prime \prime}=q^{\prime} b+r^{\prime} \quad\left(0 \leqslant r^{\prime}, r^{\prime \prime}<|b|\right)
+\end{equation*}
+于是
+\begin{equation}\label{equ1.3}
+	\left(q^{\prime \prime}-q^{\prime}\right) b=r^{\prime}-r^{\prime \prime}
+\end{equation}
+由此推出$b \mid\left(r^{\prime}-r^{\prime \prime}\right)$.但$0 \leqslant\left|r^{\prime}-r^{\prime \prime}\right|<|b|$,故必须使$r^{\prime}-r^{\prime \prime}=0$,即$r^{\prime}=r^{\prime \prime}$,代入式\eqref{equ1.3}得
+$q^{\prime}=q^{\prime \prime}$.唯一性得证.
+
+当$a=b q+r$时,$b|a \Leftrightarrow b| r$;而当$0 \leqslant r<|b|$时,$b \mid r \Leftrightarrow r=0$.故$b \mid a \Leftrightarrow r=0$.证毕.
+
+\textbf{证法二:}(1)当$b>0$时,作整数序列
+\begin{equation*}
+	\cdots,-3b,-2b,-b,0,b,2b,3b,\cdots
+\end{equation*}
+
+若$a$与序列中某一项相等,则$a=bq$,即$a=bq+r,r=0$.
+
+若$a$与序列序列中任一项不相等,则必在此序列的某相邻两项之间,即有确定的整数$q$,使得$bq<a<b(q+1)=bq+b$,所以
+\begin{equation*}
+	0<a-bq<b=|b|.
+\end{equation*}
+令$a-bq=r$,则有
+\begin{equation*}
+	a=bq+r,0<r<|b|.
+\end{equation*}
+
+(2)当$b<0$时,作整数序列
+\begin{equation*}
+	\cdots,3b,2b,b,0,-b,-2b,-3b,\cdots
+\end{equation*}
+
+若$a$与序列中某一项相等,则$a=bq$,即$a=bq+r,r=0$.
+
+若$a$与序列序列中任一项不相等,则必在此序列的某相邻两项之间,即有确定的整数$q$,使得$bq<a<b(q-1)=bq-b$,所以
+\begin{equation*}
+	0<a-bq<-b=|b|.
+\end{equation*}
+令$a-bq=r$,则有
+\begin{equation*}
+	a=bq+r,0<r<|b|.
+\end{equation*}
+
+综上所述,对给定的整数$a,b(b\neq0)$,有确定的一对整数$q$和$r$,满足
+\begin{equation*}
+	a=bq+r,0\leqslant r<|b|
+\end{equation*}
+
+对于给定的整数$a,b(b\neq0)$,如果有两对整数$q_{1},r_{1},q_{2},r_{2}$满足
+\begin{equation*}
+	\begin{aligned}
+		&a=bq_{1}+r_{1},0\leqslant r_{1}<|b|\quad\text{\ding{172}}\\
+		&a=bq_{2}+r_{2},0\leqslant r_{2}<|b|\quad\text{\ding{173}}
+	\end{aligned}
+\end{equation*}
+
+\ding{173}-\ding{172}得
+\begin{equation*}
+	r_{1}-r_{2}=(q_{2}-q_{1})b,0\leqslant|r_{1}-r_{2}|<|b|
+\end{equation*}
+
+即$b\mid(r_{1}-r_{2})$,且$|r_{1}-r_{2}|<|b|$,
+
+于是$r_{1}-r_{2}=0$,则$r_{1}=r_{2}$,从而$q_{1}=q_{2}$.
+
+\definition 式\eqref{equ1.1}中的$q$称为$a$被$b$除的\textbf{不完全商},$r$称为$a$被$b$除的\textbf{余数},也称为\textbf{最小非负剩余}.
+
+\remark 对于给定的正整数$b$,可以按照被$b$除的余数将整数集分成$b$类,使得在同一类中的整数被$b$除的余数$r$相同.这就使得关于全体整数的问题可以化归为对有限个整数类的研究.此时,$r$共有$b$种可能的取值,即$0,1, \cdots, b-1$.当$r=0$时,即为“$a$被$b$整除”的情形. 由此,整除问题往往可以化归为带余数除法问题来解决.
+
+\corollary 设$a,b,d$是给定的整数,$b\neq 0$,则存在唯一的一对整数$q$和$r$,满足$a=bq+r(d\leqslant r<|b|+d)$.
+
+\proof 考虑整数$(a-d)$及$b$,由带余数除法知,存在唯一的整数对$q$和$r_{0}$,使得$a-d=b q+r_{0}$ $\left(0 \leqslant r_{0}<|b|\right)$,所以$a=b q+r$,其中$r=r_{0}+d(d \leqslant r<|b|+d)$.由$q$和$r_{0}$的唯一性得知$q$和$r$唯一存在.证毕.
+
+\entry \textbf{e.g.}当$2 \mid b$时,取$d=-\dfrac{|b|}{2}$;当$2\nmid b$时,取$d=-\dfrac{|b|-1}{2}$,则
+\begin{equation*}
+	a=b q+r, \quad \text{其中}\begin{cases}
+		-\dfrac{|b|}{2} \leqslant r<\dfrac{|b|}{2}, & 2 \mid b \\
+		-\dfrac{|b|-1}{2} \leqslant r<\dfrac{|b|+1}{2}, & 2 \nmid b
+	\end{cases}
+\end{equation*}
+这种带余数除法中的余数$r$叫做\textbf{绝对最小余数}.
+
+\example 若$N=2^{2000}-2^{1998}+2^{1996}-2^{1994}+2^{1992}-2^{1990}$,则$9\mid N$.
+
+\example 当$n\in\mathbb{N}_{+}$时,求证:$23\mid (5^{2n+1}+2^{n+4}+2^{n+1})$.
+
+\example 设$a_{1},a_{2},\cdots,a_{n}$为不全为零的整数,以$y_{0}$表示集合
+\begin{equation*}
+	A=\left\lbrace y\mid y=a_{1}x_{1}+\cdots+a_{n}x_{n},x_{i}\in\mathbb{Z},1\leqslant i\leqslant n\right\rbrace 
+\end{equation*}
+中的最小正数,则对于任何$y\in A$,有$y_{0}\mid y$;特别地,有$y_{0}\mid a_{i}(1\leqslant i\leqslant n)$.
+
+\proof 设$y_{0}=a_{1} x_{1}^{\prime}+\cdots+a_{n} x_{n}^{\prime} \in A$,对任意的$y=a_{1} x_{1}+\cdots+a_{n} x_{n} \in A$,由定理1知,存在$q, r \in \mathbb{Z}$,使得$y=q y_{0}+r\left(0 \leqslant r<y_{0}\right)$.因此
+\begin{equation*}
+	r=y-q y_{0}=a_{1}\left(x_{1}-q x_{1}^{\prime}\right)+\cdots+a_{n}\left(x_{n}-q x_{n}^{\prime}\right) \in A
+\end{equation*}
+
+如果$r \neq 0$,那么,因为$0<r<y_{0}$,所以$r$是$A$中比$y_{0}$还小的正整数,这与$y_{0}$的定义矛盾所以$r=0$,即$y_{0} \mid y$.
+
+显然$a_{i} \in A(1 \leqslant i \leqslant n)$,所以由上述结论得$y_{0} \mid a_{i}(1 \leqslant i \leqslant n)$.证毕.
+
+\example 证明:任意给出的五个整数中,必有三个数之和能被3整除.
+
+\proof 设这五个整数是$a_{i}$, 令 $a_{i}=3 q_{i}+r_{i}\left(0 \leqslant r_{i}<3, i=1,2,3,4,5\right)$.分别考虑以下两种情形：
+
+(i)若在$r_{1}, r_{2}, \cdots, r_{5}$中数$0,1,2$都出现,不妨设$r_{1}=0, r_{2}=1, r_{3}=2$,此时
+\begin{equation*}
+	a_{1}+a_{2}+a_{3}=3\left(q_{1}+q_{2}+q_{3}\right)+3
+\end{equation*}
+能被3整除;
+
+(ii)若在$r_{1}, r_{2}, \cdots, r_{5}$中数$0,1,2$至少有一个不出现,则根据抽民原理至少有三个$r_{i}$要取相同的值,不妨设 $r_{1}=r_{2}=r_{3}=r$($r$是$0,1,2$中的某一个),此时
+\begin{equation*}
+	a_{1}+a_{2}+a_{3}=3\left(q_{1}+q_{2}+q_{3}\right)+3 r
+\end{equation*}
+能被3整除.综合情形(i)和(ii)可知,所证结论成立.证毕.
+
+\remark 例2涉及的抽屉原理也称为P.G. Dirichlet原理,即把$n+1$个元素或者更多的元素放入$n$个抽屉中,则在其中一个抽屉里至少要放入$2$个元素.一般,将$m$个元素放人 $n(m>n)$个抽屉中,则在其中一个抽屉里至少含有$\left[\dfrac{m-1}{n}\right]+1$(中括号表示不超过$\dfrac{(m-1)}{n}$的最大整数)个元素.值得注意的是,利用带余数除法得到的余数进行分类来构造抽屉是数论解(证)题中常用的方法.
+
+\example 设$r$是正奇数,证明:对任意的正整数$n$,有$(n+2)\nmid (1^{r}+2^{r}+\cdots+n^{r})$.
+
+\proof 当$n=1$时,结论显然成立.现设$n \geqslant 2$,令$S=1^{r}+2^{r}+\cdots+n^{r}$,则
+\begin{equation*}
+	2 S=2+\left(2^{r}+n^{r}\right)+\left[3^{r}+(n-1)^{r}\right]+\cdots+\left(n^{r}+2^{r}\right)
+\end{equation*}
+因为$r$为奇数,由$1.1$节的分解公式(II)可得上式右边中除第一项外,每一加项$i^{r}+(n+2-i)^{r}$都能被$i+(n+2-i)=n+2(2 \leqslant i \leqslant n)$整除, 因此$2 S=2+(n+2) Q_{1}$,其中$Q_{1}$是整数.显然,$2 S$被$n+2$除得的余数是$2$,由于 $n+2>2$,所以$(n+2) \mid 2 S$,故$(n+2) \mid S$.证毕.
+
+\example 对$m$和$n$为正整数,$m>2$,证明:$(2^{m}-1)\nmid(2^{n}+1)$.
+
+\proof 对正整数$m$和$n$分以下三种情形讨论:
+
+(i)当$n=m$时,$2^{n}+1=\left(2^{n}-1\right)+2$,由于$n=m, m>2$,所以$2^{n}-1>2$,因而
+\begin{equation*}
+	\left(2^{n}-1\right)\nmid\left(2^{n}+1\right)
+\end{equation*}
+
+(ii)当$n<m$时,有$n \leqslant m-1$,注意到$m>2$,有$2^{n}+1 \leqslant 2^{m-1}+1<2^{m}-1$,由定理1.1.1之(IV)知$\left(2^{m}-1\right) X\left(2^{n}+1\right)$.
+
+(iii)当$n>m$时,设$n=m q+r(0 \leqslant r<m, q \in \mathbf{N})$,由于
+\begin{equation*}
+	2^{n}+1=\left(2^{m q}-1\right) \cdot 2^{r}+\left(2^{r}+1\right)
+\end{equation*}
+由$1.1$节的分解公式(I)得$\left(2^{m}-1\right) \mid\left(2^{m q}-1\right)$.
+
+当$r=0$时,
+\begin{equation*}
+	2^{n}+1=\left(2^{m q}-1\right)+2=\left(2^{m}-1\right) \cdot M+2 \quad(M \in \mathbf{Z})
+\end{equation*}
+由于$m>2$,故$2^{m}-1>2$,因此$\left(2^{m}-1\right)\nmid 2$,从而$\left(2^{m}-1\right)\nmid\left(2^{n}+1\right)$.
+
+当$0<r<m$时,由(i)知$\left(2^{m}-1\right)\nmid\left(2^{r}+1\right)$.
+
+综上可知,对一切正整数$m$和$n(m>2)$,有$\left.\left(2^{m}-1\right)\right\}\left(2^{n}+1\right)$.证毕.
+
+\example 证明:若$a$被9除的余数是3,4,5或6,则方程$x^{3}+y^{3}=a$没有整数解.
+
+\proof 对任意整数$x, y$,记$x=3 q_{1}+r_{1}, y=3 q_{2}+r_{2}$,其中$0 \leqslant r_{1}, r_{2}<3, q_{1}, q_{2} \in \mathbf{Z}$.于是有$x^{3}=9 Q_{1}+r_{1}^{3}, y^{3}=9 Q_{2}+r_{2}^{3}$,其中$Q_{1}, Q_{2} \in \mathbf{Z}$.所以 $x^{3}+y^{3}=9\left(Q_{1}+Q_{2}\right)+r_{1}^{3}+r_{2}^{3}$.
+
+显然,$x^{3}+y^{3}$被9除的余数与$r_{1}^{3}+r_{2}^{3}$被9除的余数相同.由于$r_{1}^{3}, r_{2}^{3}$被9除的余数为0,1或8, 因此,$r_{1}^{3}+r_{2}^{3}$被9除的余数只可能是$0,1,2,7$或8;而已知$a$被9除的余数是$3,4,5$或6,所以,$x^{3}+y^{3}$不可能等于 $a$,即方程$x^{3}+y^{3}=a$没有整数解.证毕.
+
+\remark 若一个整系数方程有整数解,则用任何非零数同时除此方程两边所得的最小非负余数都相同.基于这个性质可知,若一个方程两边用同一个非零整数去除所得的余数不相同,则此方程必无整数解.例5正是运用了此种基本思想.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      & P6习题1.2、1;3  \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}

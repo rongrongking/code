@@ -1,0 +1,568 @@
+\section{最大公因数}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 掌握最大公因数的概念、性质及其求法  \\ \hline
+		\textbf{教学重点：}       & 最大公因数的性质及其求法 \\ \hline
+		\textbf{教学难点：}       & 最大公因数的性质\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 10课时 \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{最大公因数的概念}
+\definition 若$b\mid a_{1},b\mid a_{2},\cdots,b\mid a_{n}$,则$b$叫作$a_{1},a_{2},\cdots,a_{n}$的公因数.
+
+\entry \textbf{e.g.}$-3,6$都是$12$与$18$的公因数,其中$6$是$12$与$18$的所有公因数中最大的一个,叫作$12$与$18$的最大公因数,记作$(12,18)=6$.
+
+\definition 整数$a_{1},a_{2},\cdots,a_{n}$共有的因数中最大的一个叫作$a_{1},a_{2},$ $\cdots,a_{n}$的最大公因数,记作$(a_{1},a_{2},\cdots,a_{n})$,读作$a_{1},a_{2},\cdots,a_{n}$的最大公因数.
+
+显然$(a_{1},a_{2},\cdots,a_{n})$是正整数.
+
+\theorem 整数$a_{1},a_{2},\cdots,a_{n}$的最大公因数唯一存在.
+
+\definition 若$(a_{1},a_{2},\cdots,a_{n})=1$,则称$a_{1},a_{2},\cdots,a_{n}$互质;若$a_{1},a_{2},\cdots,a_{n}$中任意两个互质,则称$a_{1},a_{2},\cdots,a_{n}$两两互质($(a_{i},a_{j})=1(1\leqslant i,j\leqslant n,i\neq j)$).
+
+若几个数两两互质,则这几个数一定互质.反之未必成立.
+
+\entry \textbf{e.g.}$2,3,5$两两互质,它们也互质;$3,4,6$互质但不两两互质.
+
+\theorem 若$a_{1},a_{2},\cdots,a_{n}$是不全为零的整数,则
+\begin{equation*}
+	a_{1},a_{2},\cdots,a_{n}\text{与}|a_{1}|,|a_{2}|,\cdots,|a_{n}|
+\end{equation*}
+有相同的公因数,且
+\begin{equation*}
+	(a_{1},a_{2},\cdots,a_{n})=(|a_{1}|,|a_{2}|,\cdots,|a_{n}|)
+\end{equation*}
+
+\proof 设$p \mid a_{k}(k=1,2,3, \cdots, n)$,则存在$n$个整数$q_{k}$,使得$a_{k}=p q_{k}$.所以$a_{k}|=| p q_{k} \mid=p\left(\pm\left|q_{k}\right|\right)$,所以
+\begin{equation*}
+	p|| a_{k} \mid(k=1,2,3, \cdots, n)
+\end{equation*}
+即$a_{1}, a_{2}, \cdots, a_{n}$的任意公因数是$\left|a_{1}\right|,\left|a_{2}\right|, \cdots,\left|a_{n}\right|$的公因数.
+
+反之,同理可证$\left|a_{1}\right|,\left|a_{2}\right|, \cdots,\left|a_{n}\right|$的任意公因数也是$a_{1}, a_{2}, \cdots, a_{n}$的公因数.
+
+故$a_{1}, a_{2}, \cdots, a_{n}$ 与 $\left|a_{1}\right|,\left|a_{2}\right|, \cdots,\left|a_{n}\right|$有相同的公因数. 当然,其中最大者也相同,即
+\begin{equation*}
+	\left(a_{1}, a_{2}, \cdots, a_{n}\right)=\left(\left|a_{1}\right|,\left|a_{2}\right|, \cdots,\left|a_{n}\right|\right)
+\end{equation*}
+
+\remark 该定理告诉我们,讨论任意几个不全为零的整数的最大公因数问题, 可以转化为讨 论几个非负整数的最大公因数问题, 因此本节下面的讨论将在非负整数范围内进行.
+
+\theorem (i)$(a, b)=(b, a)$
+
+(ii)若$a \neq 0$,则$(a, 0)=|a|,(a, a)=|a|$.
+
+\subsection{最大公因数的性质}
+\theorem 若$a=b q+r(0 \leqslant r<b)$,则$(a, b)=(b, r)$.{\color{red}[定理1.3.1(ii)]}
+
+\proof 设$(a, b)=d,(b, r)=e$,则$d|a, d| b$,故$d \mid(a-b q)=r, d$是$b, r$的一个公因数,而$(b, r)=e$,故$d \leqslant e$.
+同理可得$e \leqslant d$.故$d=e$,即$(a, b)=(b, r)$.
+
+\entry \textbf{e.g.}由$377=319 \times 1+58$,可得$(319,377)=(319,58)$.
+
+\remark 定理的证法也是证明两个最大公因数相等的常用方法,同时,还是展转相除法求最大公因数的理论基础.
+
+\theorem 设$a_{1}, a_{2}, \cdots, a_{n} \in \mathbf{Z}$,记$A=\left\{y \mid y=\displaystyle{\sum_{i=1}^{n} }a_{i} x_{i}, x_{i} \in \mathbf{Z},\right.$ $\left. 1 \leqslant i \leqslant n\right\}$.如果$y_{0}$是集合$A$中最小的正数,则$y_{0}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)$.{\color{red}[定理1.3.2]}
+
+\proof 由于$y_{0}$是集合$A$中最小的正数,故$y_{0}=\displaystyle{\sum_{i=1}^{n}} a_{i} x_{i}^{0}\left(x_{i}^{0} \in \mathbf{Z}, 1 \leqslant i \leqslant\right.$ $\left. n\right)$.设$d$是$a_{1}, a_{2}, \cdots, a_{n}$的任意一个公因数,则$d \mid y_{0}=\displaystyle{\sum_{i=1}^{n}} a_{i} x_{i}^{0}$,所以 $d \leqslant y_{0}$.
+
+又由$1.2$节例1的结论知$y_{0} \mid a_{i}(1 \leqslant i \leqslant n)$,故$y_{0}$也是$a_{1}, a_{2}, \cdots, a_{n}$的公因数.因此,$y_{0}$是$a_{1}, a_{2}, \cdots, a_{n}$所有公因数中的最大正数,由此即得 $y_{0}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)$.证毕.
+
+\remark 由于$\left(a_{1}, a_{2}, \cdots, a_{n}\right)$是集合$A=\left\{y \mid y=\displaystyle{\sum_{i=1}^{n}} a_{i} x_{i}, x_{i} \in \mathbf{Z},\right.$ $\left.  1 \leqslant i \leqslant n\right\}$的最小正数,由定理$1.3 .2$的证明过程直接得到如下推论.
+
+\corollary 设不全为零整数$a_{1}, a_{2}, \cdots, a_{n}$的最大公因数是$\left(a_{1}, a_{2}, \right.$ $\left. \cdots, a_{n}\right)$,则存在整数$x_{1}^{\prime}, x_{2}^{\prime}, \cdots, x_{n}^{\prime}$,使得$a_{1} x_{1}^{\prime}+a_{2} x_{2}^{\prime}+\cdots+a_{n} x_{n}^{\prime}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)$.{\color{red}[推论1.3.1]}
+
+\theorem 若$d>0,d\mid a,d\mid b$,则$(a,b)=d\Leftrightarrow$存在整数$s,t$,使得$d=as+bt$.(贝祖(B$\acute{e}$zout)等式).
+
+\corollary 设$d$是$a_{1}, a_{2}, \cdots, a_{n}$的任意一个公因数,则$d \mid\left(a_{1}, a_{2}, \cdots, a_{n}\right)$. [设$q$是$a, b$的任意一个公因数,$d$是$a, b$的一个公因数,则$d=(a, b) \Leftrightarrow q \mid d$]{\color{red}[推论1.3.2]}
+
+\proof 由推论$1.3.1$知,存在整数$x_{1}^{\prime}, \cdots, x_{n}^{\prime}$使得
+\begin{equation*}
+	a_{1} x_{1}^{\prime}+\cdots+a_{n} x_{n}^{\prime}=\left(a_{1}, \cdots, a_{n}\right)
+\end{equation*}
+所以由$d \mid a_{i}(1 \leqslant i \leqslant n)$, 有 $d \mid\left(a_{1} x_{1}^{\prime}+\cdots+a_{n} x_{n}^{\prime}\right)$, 即 $d \mid\left(a_{1}, a_{2}, \cdots, a_{n}\right)$.证毕.
+
+\remark 推论$1.3.2$对最大公因数的本质属性做了非常深刻的刻画:最大公因数不但是公因数中最大的,而且是$a_{1}, a_{2}, \cdots, a_{n}$所有公因数的倍数.
+
+\theorem [定理1.3.3]$\left(a_{1}, a_{2}, \cdots, a_{n}\right)=1$的充分必要条件是存在整数 $x_{1}, x_{2}, \cdots, x_{n}$,使得
+\begin{equation}\label{equ1.4}
+	a_{1} x_{1}+a_{2} x_{2}+\cdots+a_{n} x_{n}=1
+\end{equation}
+
+\proof \textbf{必要性}由推论$1.3.1$即可得到式\eqref{equ1.4}.
+
+\textbf{充分性}若式\eqref{equ1.4}成立,令$\left(a_{1}, a_{2}, \cdots, a_{n}\right)=d$,由$d \mid a_{i}(1 \leqslant i \leqslant n)$推出：
+\begin{equation*}
+	d \mid\left(a_{1} x_{1}+a_{2} x_{2}+\cdots+a_{n} x_{n}\right)=1
+\end{equation*}
+故$d=1$,即 $\left(a_{1}, a_{2}, \cdots, a_{n}\right)=1$.证毕.
+
+\theorem 设$d|a, d| b$,则$d=(a, b) \Leftrightarrow\left(\dfrac{a}{d}, \dfrac{b}{d}\right)=1$.
+
+\proof 必要性.
+
+设$\left(\dfrac{a}{d}, \dfrac{b}{d}\right)=p>1$,则$p\left|\dfrac{a}{d}, p\right| \dfrac{b}{d}, \therefore d p|a, d p| b$,这说明$d p$是$a$与$b$的一个公因数,而$d p>d$,这与$d=(a, b)$矛盾,故$\left(\dfrac{a}{d}, \frac{b}{d}\right)=1$.
+
+充分性.
+
+若$(a, b)=q>d$,则因为$d|a, d| b$,由推论2可知$d \mid q$.
+
+设$q=d p(p>1)$,因为$(a, b)=q$,所以$q|a, q| b$
+
+因为$d p|a, d p| b$,所以$p\left|\dfrac{a}{d}, p\right| \dfrac{b}{d}$
+
+即$p$是$\dfrac{a}{d}, \dfrac{b}{d}$的一个大于1的公因数,这与$\left(\dfrac{a}{d}, \dfrac{b}{d}\right)=1$矛盾.
+
+故$(a, b)=d$.
+
+\corollary 设$d \mid a_{k}(k=1,2, \cdots, n)$,则
+\begin{equation*}
+	\left(a_{1}, a_{2}, \cdots, a_{n}\right)=d \Leftrightarrow\left(\frac{a_{1}}{d}, \frac{a_{2}}{d}, \cdots, \frac{a_{n}}{d}\right)=1
+\end{equation*}
+
+\theorem $(a c, b c)=c(a, b)$
+
+\proof 设$(a, b)=d$,则$\left(\dfrac{a}{d}, \dfrac{b}{d}\right)=1$
+
+因为$\left(\dfrac{a c}{d c}, \dfrac{b c}{d c}\right)=1$,所以$(a c, b c)=d c=c(a, b)$.
+
+\corollary $\left(m a_{1}, m a_{2}, \cdots, m a_{n}\right)=|m|\left(a_{1}, a_{2}, \cdots, a_{n}\right)$,其中$m \neq 0$.
+
+例如,$(12,28,64)=4(3,7,16)=4 \times 1=4$.
+
+\example 若$(a, b)=1$,求$(a-b, a+b)$.
+
+\solve 设$(a-b, a+b)=d$,则$d|a-b, d| a+b$,所以$d|2 a, d| 2 b, d \mid(2 a, 2 b)=2(a, b)=2$
+
+于是$d=1$或$d=2$.
+
+\remark 定理8给出了一个证明数论问题的常用方法:由两个不全为零且不互素的整数,可自然地产生一对互素的整数.利用这一结论,数论中不全为零且不互素的整数可以化归为互素的整数,从而达到简化问题证明过程的目的.
+
+\theorem 由$b \mid a c$ 及 $(a, b)=1$可以推出$b \mid c$.{\color{red}[定理1.3.5(i)]}
+
+\proof \textbf{证法一:}若$(a, b)=1$,由定理$1.3.3$知,存在整数$x$与$y$,使得$a x+b y=1$.因此,
+\begin{equation}\label{equ1.5}
+	a c x+b c y=c
+\end{equation}
+由式\eqref{equ1.5}及$b \mid a c$得到$b \mid c$.结论得证.
+
+\textbf{证法二:}因为$(a,b)=1$,所以$c=c(a,b)=(ac,bc)$,
+
+因为$b\mid bc,b\mid ac$,于是$b\mid(ac,bc)=c$.
+
+\corollary 设$p$为质数,若$p \mid a b$,则$p \mid a$或$p \mid b$.
+
+\theorem 由$b|c, a| c$及$(a, b)=1$可以推出$a b \mid c$.{\color{red}[定理1.3.5(ii)]}
+
+\proof \textbf{证法一:}因为$(a, b)=1$,由定理$1.3.3$知,存在整数$x, y$使得式\eqref{equ1.5}成立.又由$b \mid c$与$a \mid c$,得$a b|a c, a b| b c$,再由式\eqref{equ1.5}得$a b \mid c$.故结论得证.证毕.
+
+\textbf{证法二:}
+
+\textbf{e.g.}因为$2\mid 12,3\mid 12,(2,3)=1$,所以$2\times 3=12$.
+
+\corollary 若$(a, b)=1$,则$(a, b c)=(a, c)$.{\color{red}[推论1.3.3]}
+
+\proof \textbf{证法一:}由于$(a, b)=1$,由定理$1.3.3$ 知,存在整数$x, y$使得式\eqref{equ1.5}成立. 
+
+设$d=(a, b c), d^{\prime}=(a, c)$,则$d|a, d| b c$,由式\eqref{equ1.5}得$d \mid c$,即$d$是$a$与$c$的公因数,故$d\leqslant d^{\prime}$;又$d^{\prime}$是$a$与$c$的公因数,则它也是$a$与$b c$的公因数.因此 $d^{\prime} \leqslant d$,故$(a, b c)=(a, c)$.证毕.
+
+\textbf{证法二:}设$(a, b c)=d,(a, c)=h$,则$d|a, d| b c$.
+
+因为$(a, b)=1, d|a,(d, b)=1$,所以$d| c, d \mid h$.
+
+反之,同理可得$h \mid d$,所以$d=h$,即$(a, b c)=(a, c)$.
+
+例如,$(9,1350)=(9,135)=(9,27)=9$.
+
+\corollary 若$\left(a_{i}, b_{j}\right)=1(1 \leqslant i \leqslant n, 1 \leqslant j \leqslant m)$,则$\left(a_{1} a_{2} \cdots a_{n},\right.$ $\left.b_{1} b_{2} \cdots b_{m}\right)=1$.{\color{red}[推论1.3.4]}
+
+特别地,若$(a, b)=1$,则对任意正整数$m$和$n$有$\left(a^{n}, b^{m}\right)=1$.
+
+\proof 由于$\left(a_{i}, b_{j}\right)=1(1 \leqslant i \leqslant n, 1 \leqslant j \leqslant m)$,由推论$1.3.1$得
+\begin{equation*}
+	\left(a_{i}, b_{1} b_{2} \cdots b_{m}\right)=\left(a_{i}, b_{2} \cdots b_{m}\right)=\cdots=\left(a_{i}, b_{m}\right)=1 \quad(1 \leqslant i \leqslant n)
+\end{equation*}
+故$\left(a_{1} a_{2} \cdots a_{n}, b_{1} b_{2} \cdots b_{m}\right)=\left(a_{2} \cdots a_{n}, b_{1} b_{2} \cdots b_{m}\right)=\cdots=\left(a_{n}, b_{1} b_{2} \cdots b_{m}\right)=1$.证毕.
+
+\corollary 设$a,b$是不全为零的整数,$n$为正整数,则$(a^{n},b^{n})=(a,b)^{n}$.
+
+提示:$(a,b)=d(d\geqslant 1)\Rightarrow\left( \dfrac{a}{d},\dfrac{b}{d}\right) =1\Rightarrow\left( \dfrac{a^{n}}{d^{n}},\dfrac{b^{n}}{d^{n}}\right) =1$.
+
+\theorem 对于任意$n$个不全为零的整数$a_{1}, a_{2}, \cdots, a_{n}$,记
+\begin{equation*}
+	\left(a_{1}, a_{2}\right)=d_{2},\left(d_{2}, a_{3}\right)=d_{3}, \cdots,\left(d_{n-2}, a_{n-1}\right)=d_{n-1},\left(d_{n-1}, a_{n}\right)=d_{n}
+\end{equation*}
+则$d_{n}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)${\color{red}[定理1.3.6]}
+
+\proof 由已知条件及整除的传递性,有
+\begin{equation*}
+	\begin{aligned}
+		&d_{n}=\left(d_{n-1}, a_{n}\right) \Rightarrow d_{n}\left|a_{n}, d_{n}\right| d_{n-1} \\
+		&d_{n-1}=\left(d_{n-2}, a_{n-1}\right) \Rightarrow d_{n-1}\left|a_{n-1}, d_{n-1}\right| d_{n-2},\text{故} d_{n}\left|a_{n}, d_{n}\right| a_{n-1}, d_{n} \mid d_{n-2} \\
+		&d_{n-2}=\left(d_{n-3}, a_{n-2}\right) \Rightarrow d_{n-2}\left|a_{n-2}, d_{n-2}\right| d_{n-3},\text{故} d_{n}\left|a_{n}, d_{n}\right| a_{n-1}, d_{n}\left|a_{n-2}, d_{n}\right| d_{n-3} \\
+		&\quad \cdots \\
+		&d_{2}=\left(a_{1}, a_{2}\right) \Rightarrow d_{n}\left|a_{n}, d_{n}\right| a_{n-1}, \cdots, d_{n}\left|a_{2}, d_{n}\right| a_{1}
+	\end{aligned}
+\end{equation*}
+即$d_{n}$是$a_{1}, a_{2}, \cdots, a_{n}$的一个公因数.
+
+又对于$a_{1}, a_{2}, \cdots, a_{n}$的任何公因数$d$,由推论$1.3.2$及$d_{2}, \cdots, d_{n}$的定义,依次得出
+\begin{equation*}
+	\begin{split}
+		d\left|a_{1}, d\right| a_{2} &\Rightarrow d \mid d_{2} \\
+		d\left|d_{2}, d\right| a_{3} &\Rightarrow d \mid d_{3} \\
+		\quad \cdots \\
+		d\left|d_{n-1}, d\right| a_{n} &\Rightarrow d \mid d_{n}
+	\end{split}
+\end{equation*}
+
+故$d_{n}$是$a_{1}, a_{2}, \cdots, a_{n}$公因数中的最大者.因此,$d_{n}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)$.证毕.
+
+\remark 定理1.3.6指出了求$n(n>2)$个不全为零整数最大公因数的方法,其实质是先化归为$n-1$个整数的最大公因数问题,最终化归为两个整数的最大公因数问题来解决.
+
+\theorem {\color{red}[定理1.3.7]}设$a, b, c, n$是正整数,$a b=c^{n},(a, b)=1$,则存在正整数$u, v$,使得
+\begin{equation*}
+	a=u^{n}, \quad b=v^{n}, \quad c=u v, \quad(u, v)=1
+\end{equation*}
+
+\proof 因为$(a, b)=1$,所以$\left(b, a^{n-1}\right)=1$,故$a=a\left(b, a^{n-1}\right)=\left(a b, a^{n}\right)=\left(c^{n}, a^{n}\right)=(c, a)^{n}$;
+
+同理得$b=(c, b)^{n}$.令$u=(a, c), v=(b, c)$,则$a=u^{n}, b=v^{n}, c=u v$,且
+\begin{equation*}
+	(u, v)=((a, c),(b, c))=(a, b, c)=((a, b), c)=(1, c)=1
+\end{equation*}
+故定理结论成立.证毕.
+
+\remark 定理1.3.7说明,如果互素的两个正整数之积是一个整数的$n$次幂,则这两个正整数都是整数的$n$次幂.此结论还可推广为:如果正整数$a, b, \cdots, c$之积是一个整数的$n$次幂,若$a, b, \cdots, c$两两互素,则$a, b, \cdots, c$都是整数的$n$次幂.这个性质表现了整数互素的重要性,其应用较广泛.
+
+\example 设$n$是正整数,证明:$(n !+1,(n+1) !+1)=1$.
+
+\proof 设$d=(n !+1,(n+1) !+1)$,由于$(n !+1)(n+1)-[(n+1) !+1]=n$,于是有$d \mid n$.进一步有$d \mid n !$,结合$d \mid(n !+1)$可知$d \mid 1$,故$d=1$.证毕.
+
+\example 证明:任意两个费马数$\left(F_{m}, F_{n}\right)=1(m \neq n)$.
+
+\proof 不妨设$m>n$.由$1.1$节例3知,当$m>n \geqslant 0$时,费马数满足$F_{n} \mid\left(F_{m}-2\right)$,即存在整数$t$,使得 $F_{m}=2+t F_{n}$.设$d=\left(F_{m}, F_{n}\right)$,则$d=\left(2+t F_{n}, F_{n}\right)=\left(2, F_{n}\right)=2$,故$d=1$或$d=2$.但$F_{n}$显然是奇数,故必有$d=1$,即费马数是两两互素的.证毕.
+
+\example 设$m, n>0, m n \mid\left(m^{2}+n^{2}\right)$,证明:$m=n$.
+
+\proof 设$(m, n)=d$,则$m=m_{1} d, n=n_{1} d$,其中$\left(m_{1}, n_{1}\right)=1$.于是,已知条件化为$m_{1} n_{1} \mid\left(m_{1}^{2}+n_{1}^{2}\right)$,由此得$m_{1} \mid\left(m_{1}^{2}+n_{1}^{2}\right)$,故$m_{1} \mid n_{1}^{2}$.但是$\left(m_{1}, n_{1}\right)=1$,结合$m_{1} \mid n_{1}^{2}$,可知必须$m_{1}=1$.同理$n_{1}=1$.因此$m=n$.证毕.
+
+\remark 由例4知,对于给定的两个不全为零的整数,常借助于它们的最大公因数来产生两个互素的整数,以便能利用互素的性质作进一步讨论,这实质上是将原问题化归为互素的特殊情形.
+
+\example 设$k$为正奇数,证明:$1+2+\cdots+n$整除$1^{k}+2^{k}+\cdots+n^{k}$.
+
+\proof 因为$1+2+\cdots+n=\dfrac{n(n+1)}{2}$,且$(n, n+1)=1$,所以结论等价于证明
+\begin{equation*}
+	n\left|2\left(1^{k}+2^{k}+\cdots+n^{k}\right), \quad(n+1)\right| 2\left(1^{k}+2^{k}+\cdots+n^{k}\right)
+\end{equation*}
+事实上,由于$k$是奇数,利用配对法可得
+\begin{equation*}
+	\begin{split}
+		&2\left(1^{k}+2^{k}+\cdots+n^{k}\right)\\
+		=&\left[1^{k}+(n-1)^{k}\right]+\left[2^{k}+(n-2)^{k}\right]+\cdots+\left[(n-1)^{k}+1^{k}\right]+2 n^{k}
+	\end{split}
+\end{equation*}
+上式的每个加项显然都是$n$的倍数,故其和也是$n$的倍数.同理得
+\begin{equation*}
+	2\left(1^{k}+2^{k}+\cdots+n^{k}\right)=\left(1^{k}+n^{k}\right)+\left[2^{k}+(n-1)^{k}\right]+\cdots+\left(n^{k}+1^{k}\right)
+\end{equation*}
+上式是$n+1$的倍数,故$n(n+1) \mid 2\left(1^{k}+2^{k}+\cdots+n^{k}\right)$.证毕.
+
+\subsection{最大公因数的求法}
+根据最大公因数的定义和性质,我们可以得到多种求最大公因数的方法,在此只介绍常用的、重要的基本方法.
+
+\subsubsection{分解质因数法}
+根据推论1.3.2可知,几个数的公因数是这几个数最大公因数的因数,由此和最大公因 数的定义,我们可以得到求最大公因数的分解质因数法,其过程如下:
+\begin{enumerate}[itemindent=2em]
+	\item[(1)] 写出各数的标准分解式;
+	\item[(2)] 写出各分解式共同的质因数及其最小次方数,并把如此得到的幂写成连乘的形式. 
+\end{enumerate}
+
+\example 求$(60,108,24)$.
+
+\solve 因为$60=2^{2} \times 3 \times 5,108=2^{2} \times 3^{3}, 24=2^{3} \times 3$,
+
+所以$(60,108,24)=2^{2} \times 3=12$
+
+\subsubsection{提取公因数法(短除法)}
+根据定理1.3.4,可用逐步提取公因数的方法求几个数的最大公因数.
+
+\example 求$(162,216,378,108)$.
+
+\solve \begin{equation*}
+	\begin{aligned}
+		(162,216,378,108) &=2 \times(81,108,189,54)=2 \times 9 \times(9,12,21,6) \\
+		&=18 \times 3 \times(3,4,7,2)=54 \times 1=54
+	\end{aligned}
+\end{equation*}
+
+这一过程通常写成下面的短除形式:
+
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{rrrrrr}
+		\multicolumn{1}{l|}{2} &                        & 162 & 216 & 378 & 108 \\ \cline{2-6} 
+		& \multicolumn{1}{l|}{9} & 81 & 108 & 189 & 54 \\ \cline{3-6} 
+		& \multicolumn{1}{l|}{3} & 9 & 12  & 21 & 6 \\ \cline{3-6}
+		&                        & 3 & 4  & 7 & 2
+	\end{tabular}
+\end{table}
+
+因为$(3,4,7,2)=1$,所以$(162,216,378,108)=2 \times 9 \times 3=54$.
+
+\subsubsection{辗转相除法}
+
+\definition 下面的一组带余数除法,称为辗转相除法.
+
+设$a$和$b$是整数.$b\neq 0$,依次作带余数除法：
+\begin{equation}\label{equ1.11}
+	\left.\begin{array}{ll}
+		a=b q_{1}+r_{1}, & 0<r_{1}<|b| \\
+		b=r_{1} q_{2}+r_{2}, & 0<r_{2}<r_{1} \\
+		\ldots \\
+		r_{k-1}=r_{k} q_{k+1}+r_{k+1}, & 0<r_{k+1}<r_{k} \\
+		\ldots \\
+		r_{n-2}=r_{n-1} q_{n}+r_{n}, & 0<r_{n}<r_{n-1} \\
+		r_{n-1}=r_{n} q_{n+1} & r_{n+1}=0
+	\end{array}\right\}
+\end{equation}
+由于$b$是固定的,且$|b|>r_{1}>r_{2}>\cdots$,所以式\eqref{equ1.11}中仅包含有限个等式.
+
+\theorem \label{Thm1.5.1}使用式\eqref{equ1.11}中的记号,记
+\begin{equation*}
+	\begin{split}
+		&P_{0}=1, \quad P_{1}=q_{1}, \quad P_{k}=q_{k} P_{k-1}+P_{k-2}\quad (k \geqslant 2) \\
+		&Q_{0}=0, \quad Q_{1}=1, \quad Q_{k}=q_{k} Q_{k-1}+Q_{k-2} \quad (k \geqslant 2)
+	\end{split}
+\end{equation*}
+则
+\begin{equation}\label{equ1.12}
+	a Q_{k}-b P_{k}=(-1)^{k-1} r_{k} \quad(k=1,2, \cdots, n)
+\end{equation}
+
+\proof 当$k=1$时,式\eqref{equ1.12}成立.
+当$k=2$时,有
+\begin{equation*}
+	Q_{2}=q_{2} Q_{1}+Q_{0}=q_{2}, \quad P_{2}=q_{2} P_{1}+P_{0}=q_{2} q_{1}+1
+\end{equation*}
+此时由式\eqref{equ1.11}得
+\begin{equation*}
+	a Q_{2}-b P_{2}=a q_{2}-b\left(q_{2} q_{1}+1\right)=\left(a-b q_{1}\right) q_{2}-b=r_{1} q_{2}-b=-r_{2}
+\end{equation*}
+即式\eqref{equ1.12}成立.
+
+假设对于$k<m(1 \leqslant m \leqslant n)$式\eqref{equ1.12}成立,由此假设及式\eqref{equ1.11}得到
+\begin{equation*}
+	\begin{aligned}
+		a Q_{m}-b P_{m}=& a\left(q_{m} Q_{m-1}+Q_{m-2}\right)-b\left(q_{m} P_{m-1}+P_{m-2}\right)\\
+		=&\left(a Q_{m-1}-b P_{m-1}\right) q_{m}+\left(a Q_{m-2}-b P_{m-2}\right)\\
+		=&(-1)^{m-2} r_{m-1} q_{m}+(-1)^{m-3} r_{m-2}\\
+		=&(-1)^{m-1}\left(r_{m-2}-r_{m-1} q_{m}\right)=(-1)^{m-1} r_{m}
+	\end{aligned}
+\end{equation*}
+即当 $k=m$ 时式\eqref{equ1.12}也成立.
+
+由归纳原理,式\eqref{equ1.12}对一切正整数 $k$ 都成立. 
+
+\entry 定理\ref{Thm1.5.1}的结论可利用表1.1来记忆与实现:按箭头所指方向,依照斜线相乘、横 线相加的原则,可依次求出$P_{k}$和$Q_{k}(k \geqslant 2)$.
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|l|c|}
+		\hline$k$ & 0 & 1 & 2 & 3 & $\cdots$ & $k$ & $\cdots$ & $n$ \\
+		\hline$q_{k}$ & & $q_{1}$ & $q_{2}$ & $q_{3}$ & $\cdots$ & $q_{k}$ & $\cdots$ & $q_{n}$ \\
+		\hline$P_{k}$ & $P_{0}$ & $P_{1}$ & $P_{2}$ & $P_{3}$ & $\cdots$ & $P_{k}=q_{k} P_{k-1}+P_{k-2}$ & $\cdots$ & $P_{n}$ \\
+		\hline$Q_{k}$ & $Q_{0}$ & $Q_{1}$ & $Q_{2}$ & $Q_{3}$ & $\cdots$ & $Q_{k}=q_{k} Q_{k-1}+Q_{k-2}$ & $\cdots$ & $Q_{n}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\theorem \label{Thm1.5.2}使用式\eqref{equ1.11}中的记号,有$r_{n}=(a, b)$.
+
+\proof 由\eqref{equ1.11}式得
+\begin{equation*}
+	r_{n}=\left(r_{n-1}, r_{n}\right)=\left(r_{n-2}, r_{n-1}\right)=\cdots=\left(r_{1}, r_{2}\right)=\left(b, r_{1}\right)=(a, b)
+\end{equation*}
+
+\entry 由此知,利用辗转相除法可以求出不全为零的整数$x, y$,使得
+\begin{equation}\label{equ1.13}
+	a x+b y=(a, b)
+\end{equation}
+成立.
+
+事实上,在式\eqref{equ1.12}中,令$k=n$,则$a Q_{n}-b P_{n}=(-1)^{n-1} r_{n}$,于是有
+\begin{equation}\label{equ1.14}
+	(-1)^{n-1} Q_{n} a+(-1)^{n} P_{n} b=r_{n}=(a, b)
+\end{equation}
+比较式\eqref{equ1.13}和式\eqref{equ1.14}得
+\begin{equation*}
+	x=(-1)^{n-1} Q_{n}, \quad y=(-1)^{n} P_{n}
+\end{equation*}
+
+\remark 若$x=x_{0}, y=y_{0}$是适合式\eqref{equ1.13}的一对整数,则等式$a\left(x_{0}+b s\right)+b\left(y_{0}-a s\right)=(a, b)$(其中 $s$ 为任意整数)说明,满足此式的$x, y$有无穷多组,并且在$a b>0$时,可人为地选择$x$为正(负)数,$y$相应地为负 (正)数.此结论常用于证明最大公因数相关问题.
+
+\example 求$(5767,4453)$.
+
+\solve $\because 5767=4453 \times 1+1314, \therefore(5767,4453)=(4453,1314)$;
+
+$\because 4453=1314 \times 3+511, \therefore(4453,1314)=(1314,511)$;
+
+$\because 1314=511 \times 2+292, \therefore(1314,511)=(511,292)$;
+
+$\because 511=292 \times 1+219, \therefore(511,292)=(292,219)$
+
+$\because 292=219 \times 1+73, \therefore(292,219)=(219,73)$
+
+$\because 219=73 \times 3+0, \therefore(219,73)=73$
+
+$\therefore(5767,4453)=73$
+
+上述过程数据、符号书写重复太多,可以简化为下面的竖式:
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\begin{tabular}{c|cc|c}
+			1 & 4453 & 5767 &   \\
+			  & 3942 & 4453 &   \\ \cline{2-3}
+			2 &  511 & 1314 & 3 \\
+			  &  292 & 1022 &   \\ \cline{2-3}
+			1 &  219 &  292 & 1 \\
+			  &  219 &  219 &   \\ \cline{2-3}
+			  &    0 &   73 & 3 \\
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\begin{tabular}{c|cc|c}
+			$q_{1}$ & $b$           & $a$           &         \\
+			        & $r_{1} q_{2}$ & $b q_{1}$     &         \\ \cline{2-3}
+			$q_{3}$ & $r_{2}$       & $r_{1}$       & $q_{2}$ \\
+			        & $r_{3} q_{4}$ & $r_{2} q_{3}$ &         \\ \cline{2-3}
+			$q_{5}$ & $r_{4}$       & $r_{3}$       & $q_{4}$ \\
+			        & $r_{5} q_{6}$ & $r_{4} q_{5}$ &         \\ \cline{2-3}
+			        & $r_{6}$       & $r_{5}$       & $q_{6}$ \\
+		\end{tabular}
+	\end{minipage}
+\end{minipage}
+
+所以$(5767,4453)=73 ;(a, b)=\left(b, r_{1}\right)=\left(r_{1}, r_{2}\right)=\cdots$
+
+\example 求$(1008,1260,882,1134)$.
+
+\textbf{分析:}可改求$(((1008,1260), 882), 1134)$或$((1008,1260),(882,1134))$.
+
+\solve 由辗转相除法可得
+\begin{equation*}
+	(1008,1260)=252,(882,1134)=126
+\end{equation*}
+而$(252,126)=126$,故$(1008,1260,882,1134)=126$.
+
+\example 用辗转相除法求$(125,17)$,并求整数$x, y$,使得$125 x+17 y=(125,17)$.
+
+\proof 作辗转相除法,有
+\begin{equation*}
+	\begin{aligned}
+		125=7 \times 17+6, \quad& q_{1}=7, \quad r_{1}=6 \\
+		17=2 \times 6+5, \quad& q_{2}=2, \quad r_{2}=5 \\
+		6=1 \times 5+1, \quad& q_{3}=1, \quad r_{3}=1 \\
+		5=5 \times 1, \quad&q_{4}=5
+	\end{aligned}
+\end{equation*}
+
+由定理\ref{Thm1.5.2}得 $(125,17)=r_{3}=1$.
+
+下面利用定理\ref{Thm1.5.2}的结论来计算满足条件的整数$x$和$y$.根据上面的计算及定理\ref{Thm1.5.1},有
+\begin{equation*}
+	\begin{aligned}
+		&P_{0}=1, \quad P_{1}=7, \quad P_{2}=2 \times 7+1=15, \quad P_{3}=1 \times 15+7=22 \\
+		&Q_{0}=0, \quad Q_{1}=1, \quad Q_{2}=2 \times 1+0=2, \quad Q_{3}=1 \times 2+1=3
+	\end{aligned}
+\end{equation*}
+上述计算过程如表 1.2 所列,依照斜线相乘、横线相加原则，依次求出 $P_{k}$ 和 $Q_{k}(2 \leqslant k \leqslant 3)$.
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline$k$ & 0 & 1 & 2 & 3 \\
+		\hline$q_{k}$ & & 7 & 2 & 1 \\
+		\hline$P_{k}$ & 1 & 7 & $P_{2}=2 \times 7+1=15$ & $P_{3}=1 \times 15+7=22$ \\
+		\hline$Q_{k}$ & 0 & 1 & $Q_{2}=2 \times 1+0=2$ & $Q_{3}=1 \times 2+1=3$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+取$x=(-1)^{3-1} Q_{3}=3, y=(-1)^{3} P_{3}=-22$,则$125 \times 3+17 \times(-22)=(125,17)=1$.
+
+\example 设$m, n$是正整数,证明:$\left(2^{m}-1,2^{n}-1\right)=2^{(m, n)}-1$.
+
+\proof 不妨设$m \geqslant n$.由带余数除法得$m=q_{1} n+r_{1}, 0 \leqslant r_{1}<n$.于是有
+\begin{equation*}
+	2^{m}-1=2^{n q_{1}+r_{1}}-2^{r_{1}}+2^{r_{1}}-1=2^{r_{1}}\left(2^{n q_{1}}-1\right)+2^{r_{1}}-1
+\end{equation*}
+由上式及$\left(2^{n}-1\right) \mid\left(2^{n q_{1}}-1\right)$ 得
+\begin{equation*}
+	\left(2^{m}-1,2^{n}-1\right)=\left(2^{n}-1,2^{r_{1}}-1\right)
+\end{equation*}
+注意到$(m, n)=\left(n, r_{1}\right)$,若$r_{1}=0$,则$(m, n)=n$,结论成立.若$r_{1}>0$,则继续对$\left(2^{n}-1,2^{r_{1}}-1\right)$进行类似讨论.利用辗转相除法得
+\begin{equation*}
+	\begin{split}
+		n & =q_{2} r_{1}+r_{2} \left(0<r_{2}<r_{1}\right) \\
+		&\vdots\\
+		r_{k-2} & =q_{k} r_{k-1}+r_{k}  \left(0<r_{k}<r_{k-1}\right) \\
+		r_{k-1} & =q_{k+1} r_{k}  \left(r_{k+1}=0\right)
+	\end{split}
+\end{equation*}
+则 $\left(2^{n}-1,2^{r_{1}}-1\right)=\left(2^{r_{1}}-1,2^{r_{2}}-1\right)=\cdots=\left(2^{r_{k}}-1,2^{r_{k+1}}-1\right)=\left(2^{r_{k}}-1,0\right)=2^{r_{k}}-1=2^{(m, n)}-1$.
+证毕.
+
+\example 设$a>1, m, n>0$,证明:$\left(a^{m}-1, a^{n}-1\right)=a^{(m, n)}-1$.
+
+\proof 令$d=\left(a^{m}-1, a^{n}-1\right)$,考虑证明$\left(a^{(m, n)}-1\right) \mid d$且$d \mid\left(a^{(m, n)}-1\right)$来导出所证结论.
+
+事实上,因为
+\begin{equation*}
+	\left(a^{(m, n)}-1\right)\left|\left(a^{m}-1\right), \quad\left(a^{(m, n)}-1\right)\right|\left(a^{n}-1\right)
+\end{equation*}
+由推论1.3.2知
+\begin{equation*}
+	\left(a^{(m, n)}-1\right) \mid\left(\left(a^{m}-1\right),\left(a^{n}-1\right)\right)
+\end{equation*}
+即
+\begin{equation}\label{equ1.15}
+	\left(a^{(m, n)}-1\right) \mid d
+\end{equation}
+
+又设$d_{1}=(m, n)$,因为$m, n>0$,故可选择正整数$x, y$使得
+\begin{equation}\label{equ1.16}
+	m x-n y=d_{1}
+\end{equation}
+由$d \mid\left(a^{m}-1\right)$得$d \mid\left(a^{m x}-1\right)$;同理,由$d \mid\left(a^{n}-1\right)$,得$d \mid\left(a^{n y}-1\right)$.故$d \mid\left(a^{m x}-a^{n y}\right)$.
+
+由式\eqref{equ1.15}得
+\begin{equation*}
+	a^{m x}-a^{n y}=a^{n y+d_{1}}-a^{n y}=a^{n y}\left(a^{d_{1}}-1\right)
+\end{equation*}
+即
+\begin{equation}\label{equ1.17}
+	d \mid a^{n y}\left(a^{d_{1}}-1\right)
+\end{equation}
+又因为$a>1$及$d \mid\left(a^{m}-1\right)$,故$(d, a)=1$,进而
+\begin{equation*}
+	\left(d, a^{n y}\right)=1
+\end{equation*}
+由上式及式\eqref{equ1.17}得$d \mid\left(a^{d_{1}}-1\right)$,即
+\begin{equation}\label{equ1.18}
+	d \mid\left(a^{(m, n)}-1\right)
+\end{equation}
+结合式\eqref{equ1.15}和式\eqref{equ1.18}知$\left(a^{m}-1, a^{n}-1\right)=a^{(m, n)}-1$.证毕.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      & P11习题1.3、2;3;4 \quad P17习题1.5、1;2  \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}

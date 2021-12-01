@@ -1,0 +1,163 @@
+\section{数论简介与数的进制}
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 了解数论及历史、掌握数的进制  \\ \hline
+		\textbf{教学重点：}       & 数的进制与不同进制数的转化 \\ \hline
+		\textbf{教学难点：}       & 不同进制数的转化 \\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 2课时 \\ \hline
+	\end{tabular}
+\end{table}
+
+\entry 数论这门学科最初就是从研究整数开始的,所以叫做整数论.后来整数论又进一步拓展,就叫数论了.确切地说,数论就是一门研究整数性质的学科.
+
+\subsection{整数}
+\entry 把$0,1,2,3,\cdots,n,\cdots$叫做自然数,也叫做非负整数.所有自然数构成的集合,叫做\textbf{自然数集},记作$\mathbb{N}$.
+
+\entry 把$1,2,3,\cdots,n,\cdots$叫做正整数.所有正整数构成的集合,叫做\textbf{正整数集},记作$\mathbb{N}^{*}$.
+
+\entry 把$-1,-2,-3,\cdots,-n,\cdots$叫做负整数.所有负整数构成的集合,叫做\textbf{负整数集},记作$\mathbb{Z}^{-}$.
+
+\entry 正整数、零、负整数统称为整数.所有整数构成的集合,叫做\textbf{整数}集,记作$\mathbb{Z}$.
+
+\subsection{数的进制}
+\subsubsection{十进制及其计数法}
+\entry 一个$n+1$位自然数
+\begin{equation*}
+	\begin{split}
+		m&=\overline{a_{n}a_{n-1}\cdots a_{1}a_{0}}\\
+		   &=a_{n}\times10^{n}+a_{n-1}\times10^{n-1}+\cdots+a_{1}\times10+a_{0}\\
+		   &=\sum_{i=0}^{n}a_{i}10^{i}(a_{i}\in\mathbb{N},0\leqslant a_{i}\leqslant9,a_{n}\neq0).
+	\end{split}
+\end{equation*}
+这里的$10$也叫\textbf{基}.
+
+\theorem 如果$n$是自然数,则$n$表示成十进制的形式是唯一的.
+
+\example 已知:$a_{3}>a_{1},b_{3}\neq0$,且$\overline{a_{3}a_{2}a_{1}}-\overline{a_{1}a_{2}a_{2}}=\overline{b_{3}b_{2}b_{1}}$,求证:
+\begin{equation*}
+	\overline{b_{3}b_{2}b_{1}}+\overline{b_{1}b_{2}b_{3}}=1089.
+\end{equation*}
+
+
+
+\subsubsection{$k$进制数}
+\definition 如果$k$是大于或等于$2$的整数,而任一自然数
+\begin{equation*}
+	\begin{split}
+		n=b_{n} k^{n}+b_{n-1} k^{n-1}+\cdots+b_{1} k+b_{0}=\sum_{i=0}^{n} b_{i} k^{i}\\
+		(b_{n} \neq 0, b_{i} \in \mathbf{N},0 \leqslant b_{i}<k,i=0,1,2, \cdots, n)
+	\end{split}
+\end{equation*}
+就称$n$是由$k$的幂的和表示的,$n$也可以写成
+\begin{equation*}
+	n=\left(b_{n} b_{n-1} \cdots b_{1} b_{0}\right)_{k}
+\end{equation*}
+我们称$n$是用$k$进制表示的.
+
+\definition $k$进制小数
+\begin{equation*}
+	\begin{split}
+		\left(0.b_{1} b_{2} \cdots b_{n}\right)_{k}&=\frac{b_{1}}{k}+\frac{b_{2}}{k^{2}}+\cdots+\frac{b_{n}}{k^{n}}\\
+		&=\sum_{i=1}^{n} \frac{b_{i}}{k^{i}} \quad\left(0 \leqslant b_{i}<k, b_{i} \in \mathbb{N}\right)
+	\end{split}
+\end{equation*}
+
+\theorem 设$k \geqslant 2$且是整数,则任一自然数$n$仅有一种$k$进制的形式：
+\begin{equation*}
+	\begin{aligned}
+		n &=b_{n} k^{n}+b_{n-1} k^{n-1}+\cdots+b_{1} k+b_{0} \\
+		&=\sum_{i=0}^{n} b_{i} k^{i} \quad\left(b_{i} \in \mathbb{N}, 0 \leqslant b_{i}<k, b_{n} \neq 0\right)
+	\end{aligned}
+\end{equation*}
+
+\subsubsection{不同进制数的互化}
+\example $2866 =(\quad)_{5}=(\quad)_{7}=(\quad)_{8}=(\quad)_{2}$
+
+\solve 因为
+
+$\begin{aligned} 2866 &=5 \times 573+1 \\ &=5 \times(5 \times 114+3)+1 \\ &=114 \times 5^{2}+3 \times 5+1 \\ &=(5 \times 22+4) \times 5^{2}+3 \times 5+1 \\ &=5^{3} \times 22+4 \times 5^{2}+3 \times 5+1 \\ &=5^{3} \times(5 \times 4+2)+4 \times 5^{2}+3 \times 5+1 \\ &=4 \times 5^{4}+2 \times 5^{3}+4 \times 5^{2}+3 \times 5+1 \end{aligned}$
+
+所以$2866=(42431)_{5}$
+
+以后称这种化十进制数为$k$进制数的方法为\textbf{除$k$取余法},并采用下面的除法算式:
+
+\begin{center}
+	\shortdiv{2866}{5}\quad
+\end{center}
+
+所以$2866=(42431)_{5}$.
+
+同理$2866=(112331)_{7}$.
+
+$2866=(5462)_{8}$.
+
+$2866=(101 100 110 010)_{2}$.
+
+\example 计算
+\begin{enumerate}[itemindent=2em]
+	\item[(1)] $(1234)_{5}+(2341)_{5}$;
+	\item[(2)] $(2341)_{5}-(1234)_{5}$;
+	\item[(3)] $(2341)_{5}\times(1234)_{5}$;
+	\item[(4)] $(3023)_{5}\div(1234)_{5}$;
+\end{enumerate}
+
+\solve 上述四题均可先将五进制数改成十进制后按要求算出结果后,再将十进制的结果转换成五进制;但也可以直接计算.
+
+(1)$\because \quad(1234)_{5}=1 \times 5^{3}+2 \times 5^{2}+3 \times 5+4=194$
+
+$(2341)_{5}=2 \times 5^{3}+3 \times 5^{2}+4 \times 5+1=346$
+
+$194+346=540$
+
+\begin{center}
+	\shortdiv{540}{5}\quad
+\end{center}
+
+$540=(4130)_{5}$,
+
+$\therefore(1234)_{5}+(2341)_{5}=(4130)_{5} .$
+
+(2)$\because 346-194=152$,
+
+$\therefore(2341)_{5}-(1234)_{5}=(1102)_{5}$
+
+(3)$\because 194 \times 346=67124$
+
+$\therefore (2341)_{5} \times(1234)_{5}=(4121444)_{5} .$
+
+(4)$\because (3023)_{5}=3 \times 5^{3}+2 \times 5+3=388$
+
+$388 \div 194=2$,
+
+$\therefore (3023)_{5} \div(1234)_{5}=(2)_{5}$
+
+\exercise1 (1)$56132=(\quad)_{2}=(\quad)_{8}$
+
+$\begin{aligned} (2)2000 &=(\quad)_{3}=(\quad)_{7} \\ &=(\quad)_{9}=(\quad)_{12} \end{aligned}$
+
+(3)$(12301)_{5}=(\quad)_{7}$
+
+\exercise2 计算 
+\begin{enumerate}[itemindent=2em]
+	\item[(1)] $(110)_{2}+(1011)_{2},(10101)_{2}-(111)_{2}$,
+	
+	$(10101)_{2} \times(101)_{2},(1101001)_{2} \div(1010)_{2}$,
+	\item[(2)] $(2517)_{8}+(3124)_{8},(15721)_{8}-(452)_{8}$
+	
+	$(301)_{8} \times(125)_{8},(212)_{8} \div(27)_{8}$
+\end{enumerate}
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      & 练习1、2  \\ \hline
+		\textbf{教学后记：}  & \vspace{6ex} \\ \hline
+	\end{tabular}
+\end{table}
+
+

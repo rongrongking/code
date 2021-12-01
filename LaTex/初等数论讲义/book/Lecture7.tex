@@ -1,0 +1,119 @@
+\section{算术基本定理}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 了解算术基本定理  \\ \hline
+		\textbf{教学重点：}       & 算术基本定理 \\ \hline
+		\textbf{教学难点：}       & 算术基本定理\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 2课时 \\ \hline
+	\end{tabular}
+\end{table}
+\lemma 任何大于$1$的正整数$n$都可表示成素数之积,即
+\begin{equation}\label{equ1.19}
+	n=p_{1} p_{2} \cdots p_{m}
+\end{equation}
+其中$p_{i}(1 \leqslant i \leqslant m)$是素数.
+
+\proof 对正整数$n$进行归纳.当$n=2$时,式\eqref{equ1.19}显然成立.
+
+假设式\eqref{equ1.19}对任意小于$n$的正整数都成立,现在考虑$n$,如果$n$是素数,则式\eqref{equ1.19}显然成立.
+
+如果$n$是合数,则$n$有正的真因数$a, b$使得$n=a \cdot b(1<a, b<n)$,根据归纳假设知,$a, b$均可以分解为有限个素数之积,从而$n$也可以分解为有限个素数之积.
+
+由归纳法原理,对一切大于$1$的正整数$n$都能分解成式\eqref{equ1.19}的形式.证毕.
+
+\theorem \textbf{(算术基本定理)}任何大于$1$的正整数$n$都可唯一表示成
+\begin{equation}\label{equ1.20}
+	n=p_{1}^{\alpha_{1}} p_{2}^{\alpha_{2}} \cdots p_{k}^{a_{k}}
+\end{equation}
+其中,$p_{1}, p_{2}, \cdots, p_{k}$是素数,$p_{1}<p_{2}<\cdots<p_{k}$,且$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{k}$是正整数.
+
+\proof \textbf{存在性}\quad 由上述引理可知,任何大于$1$的正整数$n$都可分解成式\eqref{equ1.19}的形式,即
+\begin{equation*}
+	n=p_{1} p_{2} \cdots p_{m}
+\end{equation*}
+其中$p_{i}(1 \leqslant i \leqslant m)$是素数.适当调整分解式\eqref{equ1.19}中素数的顺序,并将式\eqref{equ1.19}中相同素因数的乘积写成该素数的方幂的乘积,则$n$可表示成
+\begin{equation*}
+	n=p_{1}^{a_{1}} p_{2}^{a_{2}} \cdots p_{k}^{\alpha_{k}}
+\end{equation*}
+其中$p_{1}<p_{2}<\cdots<p_{k}$,且$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{k}$是正整数.
+
+\textbf{唯一性}\quad 假设$p_{i}(1 \leqslant i \leqslant k)$与$q_{j}(1 \leqslant j \leqslant l)$都是素数,且
+\begin{equation}\label{equ1.21}
+	p_{1} \leqslant p_{2} \leqslant \cdots \leqslant p_{k}, \quad q_{1} \leqslant q_{2} \leqslant \cdots \leqslant q_{l}
+\end{equation}
+并且
+\begin{equation}\label{equ1.22}
+	n=p_{1} p_{2} \cdots p_{k}=q_{1} q_{2} \cdots q_{l}
+\end{equation}
+则由定理1.6.3知,必有某个$q_{j}(1 \leqslant j \leqslant l)$,使得$p_{1} \mid q_{j}$,由于$p_{1}$和$q_{j}$都是素数,所以 $p_{1}=q_{j}$;同理,必有某个$p_{i}(1 \leqslant i \leqslant k)$,使得$q_{1} \mid p_{i}$,所以$q_{1}=p_{i}$.于是,结合式 \eqref{equ1.21}可知
+\begin{equation*}
+	q_{j}=p_{1} \leqslant p_{i}=q_{1} \leqslant q_{j}=p_{1}
+\end{equation*}
+故$p_{1}=q_{1}$,从而由式\eqref{equ1.22}得到
+\begin{equation*}
+	p_{2} \cdots p_{k}=q_{2} \cdots q_{l}
+\end{equation*}
+反复进行上述操作,最后必有$k=l, p_{i}=q_{i}(1 \leqslant i \leqslant k)$,即唯一性得证.
+
+证毕.
+
+\definition 正整数$n$的分解式$n=p_{1}^{a_{1}} p_{2}^{a_{2}} \cdots p_{k^{k}}^{a_{k}}$称为$n$的标准分解式,其中$p_{1}, p_{2}, \cdots, p_{k}$是素数,$p_{1}<p_{2}<\cdots<p_{k}$,且$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{k}$是正整数.
+
+\remark 算术基本定理又称为\textbf{唯一分解定理}.
+
+\corollary {\color{red}[推论1.7.1]}设$n$的标准分解式为$n=p_{1}^{\alpha_{1}} p_{2}^{a_{2}} \cdots p_{k}^{a_{k}}$,则:
+\begin{enumerate}
+	\item[(i)] $n$的任一正约数$d$具有形式$d=p_{1}^{\gamma_{1}} p_{2}^{\gamma_{2}} \cdots p_{k}^{\gamma_{k}}\left(\gamma_{i} \in \mathbf{Z}, 0 \leqslant \gamma_{i} \leqslant \alpha_{i}, 1 \leqslant  \right.$ $\left.i\leqslant k\right)$;
+	\item[(ii)] $n$的正倍数$m$具有形式$m=p_{1}^{\beta_{1}} p_{2}^{\beta_{2}} \cdots p_{k}^{\beta_{k}} M\left(M \in \mathbf{N}, \beta_{i} \in \mathbf{N}, \beta_{i} \geqslant \alpha_{i},\right.$ $\left. 1 \leqslant i \leqslant k\right)$.
+\end{enumerate}
+
+\corollary {\color{red}[推论1.7.2]}若正整数$a$与$b$的分解式分别为$a=p_{1}^{a_{1}} p_{2}^{\alpha_{2}} $ $\cdots p_{k}^{a_{k}}, b=p_{1}^{\beta_{1}} p_{2}^{\beta_{2}} \cdots p_{k}^{\beta_{k}}$,其中$p_{1}, p_{2}, \cdots, p_{k}$是互不相同的素数,$\alpha_{i}, \beta_{i}(1 \leqslant i \leqslant k)$是非负整数,则
+\begin{equation*}
+	\begin{split}
+		&(a, b)=p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \cdots p_{k}^{\lambda_{k}}, \quad \lambda_{i}=\min \left\{\alpha_{i}, \beta_{i}\right\}  (1 \leqslant i \leqslant k) \\
+		&{[a, b]=p_{1}^{\mu_{1}} p_{2}^{\mu_{2}} \cdots p_{k}^{\mu_{k}}, \quad \mu_{i}=\max \left\{\alpha_{i}, \beta_{i}\right\}}  (1 \leqslant i \leqslant k)
+	\end{split}
+\end{equation*}
+
+\example 若$n$的标准分解式为$n=p_{1}^{a_{1}} p_{2}^{a_{2}} \cdots p_{k}^{a_{k}}$,设$d(n)$为$n$的正因数的个数,$\sigma(n)$为$n$的所有正因数之和,则有
+\begin{equation}\label{equ1.23}
+	d(n)=\left(\alpha_{1}+1\right)\left(\alpha_{2}+1\right) \cdots\left(\alpha_{k}+1\right)
+\end{equation}
+
+\begin{equation}\label{equ1.24}
+	\sigma(n)=\frac{p_{1}^{a_{1}+1}-1}{p_{1}-1} \cdot \frac{p_{2}^{a_{2}+1}-1}{p_{2}-1} \cdot \cdots \cdot \frac{p_{k}^{a_{k}+1}-1}{p_{k}-1}
+\end{equation}
+
+若$(a, b)=1$,则有
+\begin{equation}\label{equ1.25}
+	d(a b)=d(a) d(b)
+\end{equation}
+
+\begin{equation}\label{equ1.26}
+	\sigma(a b)=\sigma(a) \sigma(b)
+\end{equation}
+
+\proof 当$n>1$时,利用推论1.7.1容易推出式\eqref{equ1.23}成立.当$n=1$时,由于$d(1)=1$,则式\eqref{equ1.23}也成立,此即为 $\alpha_{1}=\alpha_{2}=\cdots=\alpha_{k}=0$的情形.为了证明式\eqref{equ1.24},仍然利用推论1.7.1,有
+\begin{equation*}
+	\begin{aligned}
+		\alpha(n)=& \sum_{0 \leqslant \beta_{i} \leqslant a_{i} \atop 1 \leqslant i \leqslant k} p_{1}^{\beta_{1}} \cdots p_{k^{k}}^{\beta_{k}}=\sum_{\beta_{1}=0}^{a_{1}} p_{1}^{\beta_{1}} \cdot\left(\sum_{0 \leqslant \beta_{i} \leqslant a_{i}} p_{2}^{\beta_{2}} \cdots p_{k}^{\beta_{k}}\right)=\cdots=\\
+		&\left(\sum_{\beta_{1}=0}^{a_{1}} p_{1}^{\beta_{1}}\right) \cdots\left(\sum_{\beta_{k}=0}^{a_{k}} p_{k}^{\beta_{k}}\right)=\frac{p_{1}^{a_{1}+1}-1}{p_{1}-1} \cdot \frac{p_{2}^{a_{2}+1}-1}{p_{2}-1} \cdot \cdots \cdot \frac{p_{k}^{\alpha_{k}+1}-1}{p_{k}-1}
+	\end{aligned}
+\end{equation*}
+
+由于两整数互素,这就意味着它们的标准分解式中没有相同的素因子;反之亦然.因此,当$(a, b)=1$时,式\eqref{equ1.25}和式\eqref{equ1.26}分别是式\eqref{equ1.23}和式\eqref{equ1.24}的直接推论.证毕.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      &   \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}
+
+
+

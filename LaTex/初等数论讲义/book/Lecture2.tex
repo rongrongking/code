@@ -1,0 +1,179 @@
+\section{数的整除性}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 掌握数的整除性的概念与性质  \\ \hline
+		\textbf{教学重点：}       & 数的整除性的概念与性质 \\ \hline
+		\textbf{教学难点：}       & 整除的性质\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 4课时 \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{数的整除性}
+\definition 设$a, b$为两个整数, $b \neq 0$.如果存在整数$c$,使得$a=b c$,则称\textbf{$a$被$b$整除或$b$整除$a$},记作$b \mid a$,并称$a$是$b$的\textbf{倍数},$b$是$a$的\textbf{因数}(或\textbf{约数}), 如果不存在整数$c$,使得$a=bc$成立,则称\textbf{$a$不被$b$整除}或\textbf{$b$不整除$a$},记作$b\nmid a$.
+
+\entry 每个非零整数至少有$\pm1$和$\pm a$作为它的因数,称它们为$a$的\textbf{平凡因数};$a$的异于$\pm1$和$\pm a$的因数,称为$a$的\textbf{非平凡因数},或$a$的\textbf{真因数}.
+
+\entry \textbf{e.g.}$3\mid 8;5\mid 125;5\mid(-25);13\mid 1001;2018\mid 0;1\mid a;a\mid a(a\neq0);5\nmid 12$.
+
+\property \textbf{(传递性)}若$b \mid c$,且$c \mid a$,则$b\mid a$.
+
+\proof 因为$b \mid c$,所以存在整数$q$,满足$c=bq$.因为$c \mid a$,所以存在整数$p$,满足$a=cp$.于是
+\begin{equation*}
+	a=cp=(bq)p=(pq)b
+\end{equation*}
+因为$p,q\in\mathbb{Z}$,所以$pq\in\mathbb{Z}$,故$b\mid a$.
+
+\example 求证:$13\mid\overline{abcabc}(a\neq 0)$.
+
+\proof 因为$\overline{abcabc}=\overline{abc}\times1000+\overline{abc}=\overline{abc}\times1001$,所以$1001\mid \overline{abcabc}$.因为$13\mid 1001$,所以$13\mid\overline{abcabc}$.
+
+\property \textbf{(可加性)}若$b\mid a$,且$b\mid c$,则对任意整数$k,l$,有$b\mid (ka+lc)$;
+
+一般,若$b\mid a_{i}(i=1,2,\cdots,n)$,则$b\mid(a_{1}x_{1}+a_{2}x_{2}+\cdots+a_{n}x_{n})$,其中$x_{i}(i=1,2,\cdots,n)$是任意整数.
+
+\example 求证:$37\mid(333^{777}+777^{333})$.
+
+\proof 因为$111\mid 333^{777},111\mid 777^{333}$,所以$111\mid(333^{777}+777^{333})$.因为$37\times3=111$,所以$37\mid(333^{777}+777^{333})$.
+
+\property \textbf{(可乘性)}若$b\mid a.d\mid c$,则$bd\mid ac$.
+
+\property $b\mid a\Leftrightarrow |b|\mid|a|$.(若$b\mid a,a\neq0$,则$|b|\leqslant|a|$;若$b\mid a$,且$|a|<|b|$,则$a=0$;若$b\mid a$,且$a\mid b$,$a>0,b>0$,则$a=b$.)
+
+\entry (I)若$n$是正整数,则$a^{n}-b^{n}=(a-b)(a^{n-1}+a^{n-2}b+\cdots+ab^{n-2}+b^{n-1})$;
+
+(II)若$n$是正奇数,则在上式中以$(-b)$代换$b$,得
+\begin{equation*}
+	a^{n}+b^{n}=(a+b)(a^{n-1}-a^{n-2}b+\cdots-ab^{n-2}+b^{n-1}).
+\end{equation*}
+
+\example 证明$\begin{matrix} \underbrace{10\cdots01} \\ 50\text{个}0\end{matrix}$能被$1001$整除.
+
+\proof 由分解公式(II),有
+\begin{equation*}
+	\begin{split}
+		\begin{matrix} \underbrace{10\cdots01} \\ 50\text{个}0\end{matrix}&=10^{51}+1=\left(10^{3}\right)^{17}+1\\
+		&=\left(10^{3}+1\right)\left[\left(10^{3}\right)^{16}-\left(10^{3}\right)^{15}+\cdots-10^{3}+1\right]
+	\end{split}
+\end{equation*}
+所以,$10^{3}+1=1001$整除$\begin{matrix} \underbrace{10\cdots01} \\ 50\text{个}0\end{matrix}$.
+
+\example 若$n$是奇数,证明$8\mid(n^{2}-1)$.
+
+\proof 设$n=2 k+1(k \in \mathbf{Z})$,则$n^{2}-1=(2 k+1)^{2}-1=4 k(k+1)$.由于$k$和$k+1$中必有一个是偶数,所以$8 \mid\left(n^{2}-1\right)$.
+ 
+\remark \ding{172}任何奇数的平方于$1$的差都能被$8$整数.
+
+\ding{173}任何整数的平方被$4$除的余数为$0$或$1$,被$3$除的余数为$0$或$1$;
+
+\ding{174}任何整数的立方除$9$的余数为$0$,$1$或$8$等等.
+
+\example 设$m>n\geqslant0$,证明:$(2^{2^{n}}+1)\mid(2^{2^{m}}-1)$.
+
+\proof 由于$m>n \geqslant 0$,故$m-n-1 \geqslant 0$.在分解公式(I)中,令$a=2^{2^{n+1}},b=1$,则
+\begin{equation*}
+	\begin{split}
+		2^{2^{m}}-1&=\left(2^{2^{n+1}}\right)^{2^{m-n-1}}-1\\
+		&=\left(2^{2^{n+1}}-1\right)\left[\left(2^{2^{n+1}}\right)^{2^{m-n-1}-1}+\cdots+2^{2^{n+1}}+1\right]
+	\end{split}
+\end{equation*}
+所以$\left(2^{2^{n+1}}-1\right) \mid\left(2^{2^{m}}-1\right)$.又$2^{2^{n+1}}-1=\left(2^{2^{n}}+1\right)\left(2^{2^{n}}-1\right)$,因此$\left(2^{2^{n}}+1\right) \mid\left(2^{2^{n+1}}-1\right)$.
+
+由性质1知$\left(2^{2^{n}}+1\right) \mid\left(2^{2^{m}}-1\right)$.
+
+\remark $F_{n} \mid\left(F_{m}-2\right)$,即存在整数$t$,使得$F_{m}-2=t \cdot F_{n}$.
+
+\remark 在例5中, 直接证明$\left(2^{2^{n}}+1\right) \mid\left(2^{2^{m}}-1\right)$不易入手,因此尝试选择适当的中间量$\left(2^{2^{n+1}}-1\right)$,使之满足定理1.1.1之(I)的条件,再利用整除的传递性导出所证结论.
+
+\example 设正数$n$的十进制表示为$n=a_{k}\cdots a_{1}a_{0}(0\leqslant a_{i}\leqslant 9,0\leqslant i\leqslant k,a_{k}\neq 0)$,且
+\begin{equation*}
+	S(n)=a_{k}+a_{k-1}+\cdots+a_{1}+a_{0}
+\end{equation*}
+证明:$9\mid n$的充分必要条件是$9\mid S(n)$.
+
+\proof 由于
+\begin{equation*}
+	n=a_{k} \times 10^{k}+\cdots+a_{1} \times 10+a_{0}, \quad S(n)=a_{k}+a_{k-1}+\cdots+a_{1}+a_{0}
+\end{equation*}
+所以$n-S(n)=a_{k}\left(10^{k}-1\right)+\cdots+a_{1}(10-1)$
+
+对于所有的$0 \leqslant i \leqslant k,$ 有 $9 \mid\left(10^{i}-1\right)$,故上式右端$k$个加项中的每一项都是$9$的倍数,由定理 1.1 .1 之(I)知,它们的和也被$9$整除, 即$9 \mid[n-S(n)]$,从而 $9|n \Leftrightarrow 9| S(n)$.
+
+\remark 一个十进制整数被另一个正整数整除的条件(如例4及习题1.1的第2题),称为\textbf{整除的数字特征}. 例4得出十进制正整数 $n$ 被9整除的数字特征是:$9$整除$n$的各位数字之和.
+
+\subsection{整数的奇偶性}
+\definition 能被$2$整除的整数叫做偶数;不能被$2$整除的整数叫做奇数.
+
+\property 偶数$\pm$偶数$=$偶数;偶数$\pm$奇数=奇数;奇数$\pm$奇数=偶数.
+
+只证明:一个偶数与一个奇数之和为奇数.
+
+\proof 设任一偶数$a=2n(n\in\mathbb{Z})$;任一奇数$b=2m+1(m\in\mathbb{Z})$,则
+\begin{equation*}
+	a+b=2n+(2m+1)=2(n+m)+1
+\end{equation*}
+
+可见,$a+b$是奇数.
+
+\corollary 若干个偶数之和为偶数;正偶数个奇数之和为偶数;正奇数个奇数之和为奇数.
+
+\example 有$7$个茶杯,杯口全朝上,每次同时翻转$4$个称为一次远动,可否经若干次远动使杯口全朝下?
+
+\solve 一个茶杯由口朝上翻转为口朝下,须经奇数次翻转.
+
+设经$k$次运动可使杯口全朝下,此时每个茶杯翻转的次数分别记作
+\begin{equation*}
+	a_{1},a_{2},a_{3},a_{4},a_{5},a_{6},a_{7}
+\end{equation*}
+
+因为杯口全朝下,所以$a_{1},a_{2},a_{3},a_{4},a_{5},a_{6},a_{7}$均为奇数.
+
+故$7$个茶杯翻转的总次数$a_{1}+a_{2}+a_{3}+a_{4}+a_{5}+a_{6}+a_{7}=s$必是奇数.
+
+另一方面,每次同时翻转$4$个为一次远动,若经$k$次运动使$7$个茶杯的杯口全朝下,此时翻转的总次数为$4k$,这是一个偶数.这与$s$为奇数矛盾.故不可能经过若干次运动使杯口全朝下.
+
+\property 奇数$\times$奇数=奇数;偶数$\times$整数=偶数.
+
+\corollary 若干个奇数之积为奇数.
+
+\example 设$a_{1},a_{2},\cdots,a_{n}$是$1,2,\cdots,n$的任一新排列,$n$为奇数,求证:$(a_{1}-1)(a_{2}-2)\cdots(a_{n}-n)$为偶数.
+
+\proof 因为
+\begin{equation*}
+	\begin{split}
+		&(a_{1}-1)+(a_{2}-2)+\cdots+(a_{n}-n)\\
+		=&(a_{1}+a_{2}+\cdots+a_{n})-(1+2+\cdots+n)\\
+		=&0
+	\end{split}
+\end{equation*}
+这说明奇数个整数$(a_{1}-1),(a_{2}-2),\cdots,(a_{n}-n)$之和为偶数.
+
+所以$(a_{1}-1),(a_{2}-2),\cdots,(a_{n}-n)$至少有一个为偶数.
+
+故$(a_{1}-1)(a_{2}-2)\cdots(a_{n}-n)$为偶数.
+
+\property 设$a$为整数,$n$为正整数,则$a^{n}$与$a$奇偶性相同.
+
+\example 对正整数$a$,若存在正整数$b$,使得$b^{2}=a$成立,则称$a$为完全平方数.类似地可定义完全立方数等.
+
+求证:任意两个奇数的平方和不是完全平方数.
+
+\proof 设两个奇数分别为$a=2n+1(n\in\mathbb{Z}),b=2m+1(m\in\mathbb{Z}),k=a^{2}+b^{2}$,则$a^{2},b^{2}$均为奇数,故$k=a^{2}+b^{2}$为偶数.
+
+若$k$为完全平方数,则只能是一个正偶数的平方(否则$k$不是偶数).
+
+设$k=(2q)^{2}$($q$为正整数),则$k=4q^{2}$,故$4\mid k$.
+
+另一方面,$k=a^{2}+b^{2}=4(n^{2}+m^{2}+n+m)+2$,可见$4\nmid k$,自相矛盾.
+
+故任意两个奇数的平方和不是完全平方数.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      & P3习题1.1、1;2;3;4  \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}

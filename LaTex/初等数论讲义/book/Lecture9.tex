@@ -1,0 +1,175 @@
+\section{同余的基本性质}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 掌握同余的概念与基本性质  \\ \hline
+		\textbf{教学重点：}       & 同余的基本性质 \\ \hline
+		\textbf{教学难点：}       & 同余的基本性质\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 4课时 \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{同余的概念}
+\entry \textbf{e.g.}今天星期六,从今天起第36天和第43天分别是星期几?
+
+36和43除以7的余数即可,余数都是1,所以答案都是星期日.
+
+\definition 设$m$是给定的正整数,$a, b$是任意整数,如果整数$m \mid(a-b)$,则称$a$与$b$关于模$m$同余,记为
+\begin{equation*}
+	a \equiv b(\bmod \hspace{1ex}m)
+\end{equation*}
+如果整数$m \nmid(a-b)$,则称$a$与$b$关于模$m$不同余,记为$a \not \equiv b(\bmod \hspace{1ex}m)$.
+
+显然$a \equiv 0(\bmod \hspace{1ex}m) \Leftrightarrow m \mid a$.
+
+\theorem $a$与$b$关于模$m$同余的充分必要条件是,$a$和$b$被$m$除后所得的最小非负余数相等,即若$a=q_{1} m+r_{1}\left(0 \leqslant r_{1}<m\right), b=q_{2} m+r_{2}\left(0 \leqslant r_{2}<m\right)$,则$a \equiv b(\bmod m) \Leftrightarrow r_{1}=r_{2}$.
+
+\proof 由题设有$a-b=\left(q_{1}-q_{2}\right) m+\left(r_{1}-r_{2}\right)$,因此$m \mid(a-b)$的充分必要条件是$m \mid\left(r_{1}-r_{2}\right)$,由此及$0 \leqslant\left|r_{1}-r_{2}\right|<m$即得$r_{1}=r_{2}$,亦即$a \equiv b(\bmod m) \Leftrightarrow r_{1}=r_{2}$.
+
+\corollary $a\equiv b(\bmod \hspace{1ex}m)\Leftrightarrow a=b+mt(t\in\mathbb{Z})$.
+
+\textbf{e.g.}$n=8t+7(t\in\mathbb{Z})\Leftrightarrow 8\mid(n-7)\Leftrightarrow n\equiv 7(\bmod 8)$.
+
+\subsection{同余的性质}
+\theorem 同余是一种等价关系,即同余具有下面性质:
+\begin{enumerate}[itemindent=2em]
+	\item[(i)] 反身性:$a \equiv a(\bmod \hspace{1ex}m)$;
+	\item[(ii)] 对称性:$a \equiv b(\bmod \hspace{1ex}m) \Leftrightarrow b \equiv a(\bmod \hspace{1ex}m)$;
+	\item[(iii)] 传递性:$a \equiv b, b \equiv c(\bmod \hspace{1ex}m) \Rightarrow a \equiv c(\bmod \hspace{1ex}m)$.
+\end{enumerate}
+
+\proof 由 $m|(a-a)=0, m|(a-b) \Leftrightarrow m \mid(b-a)$ 以及 $m|(a-b), m|(b-c) \Rightarrow m \mid(a-b)+(b-c)=a-c$,即可推出上述三条性质.
+
+\theorem (可加性)若$a \equiv b(\bmod \hspace{1ex}m), c \equiv d(\bmod \hspace{1ex}m)$,则$a+c \equiv b+d(\bmod \hspace{1ex}m)$.
+
+\proof 由$m \mid(a-b)$及$m|(c-d) \Rightarrow m|(a-b)+(c-d)$,即得$m \mid(a+c)-(b+d)$;对于减法同理可证.故结论成立.
+
+\corollary 若$a+c \equiv b(\bmod m), c \in \mathbb{Z}$,则$a \equiv b-c(\bmod \hspace{1ex}m)$.
+
+\theorem (可乘性)
+\begin{enumerate}[itemindent=2em]
+	\item[(1)] 若$a \equiv b(\bmod \hspace{1ex}m), c \in \mathbb{Z}$,则$a c \equiv b c(\bmod \hspace{1ex}m)$.
+	\item[(2)] 若$a \equiv b(\bmod \hspace{1ex}m), c \equiv d(\bmod \hspace{1ex}m)$,则$a c \equiv b d(\bmod \hspace{1ex}m)$.
+	\item[(3)] 若$a \equiv b(\bmod \hspace{1ex}m), n \in \mathbb{N}^{*}$,则$a^{n} \equiv b^{n}(\bmod \hspace{1ex}m)$.
+	\item[(4)] 若$a \equiv b\left(\bmod \hspace{1ex}m_{1}\right), a \equiv b\left(\bmod \hspace{1ex}m_{2}\right),\left(m_{1}, m_{2}\right)=1$,则$a \equiv b\left(\bmod \hspace{1ex}m_{1} m_{2}\right)$;
+	
+	若$a \equiv b\left(\bmod \hspace{1ex}m_{1}\right), a \equiv b\left(\bmod \hspace{1ex}m_{2}\right)$,则$a \equiv b\left(\bmod \hspace{1ex}\left[m_{1}, m_{2}\right]\right)$.
+\end{enumerate}
+
+\proof (1)$\because a \equiv b(\bmod \hspace{1ex}m), \therefore m \mid(a-b)$;
+
+$\therefore m \mid(a-b) c=a c-b c$.
+
+$\therefore a c \equiv b c(\bmod \hspace{1ex}m)$.
+
+(2)$\because a \equiv b(\bmod \hspace{1ex}m), \therefore a c \equiv b c(\bmod \hspace{1ex}m)$;
+
+$\because c \equiv d(\bmod \hspace{1ex}m), \therefore b c \equiv b d(\bmod \hspace{1ex}m) .$
+
+$\therefore a c \equiv b d(\bmod \hspace{1ex}m) .$
+
+(3)$\because a \equiv b(\bmod \hspace{1ex}m), \therefore m \mid(a-b)$
+
+$\therefore m \mid(a-b)\left(a^{n-1}+a^{n-2} b+\cdots+a b^{n-2}+b^{n-1}\right)=a^{n}-b^{n}$
+
+$\therefore a^{n} \equiv b^{n}(\bmod \hspace{1ex}m)$.
+
+(4)$\because a \equiv b\left(\bmod \hspace{1ex}m_{1}\right), a \equiv b\left(\bmod \hspace{1ex}m_{2}\right)$,
+
+$\therefore m_{1}\left|(a-b), m_{2}\right|(a-b), \therefore\left[m_{1}, m_{2}\right] \mid(a-b)$
+
+$\therefore a \equiv b\left(\bmod \hspace{1ex}\left[m_{1}, m_{2}\right]\right)$.
+
+\corollary (1)若$a \equiv b\left(\bmod\hspace{1ex} m_{1}\right), a \equiv b\left(\bmod\hspace{1ex} m_{2}\right), \cdots, a \equiv b\left(\bmod\hspace{1ex} m_{n}\right)$,且$m_{1}, m_{2},\cdots, m_{n}$一两互质,则
+\begin{equation*}
+	a \equiv b\left(\bmod\hspace{1ex} m_{1} m_{2} \cdots m_{n}\right) ;
+\end{equation*}
+
+(2)若$a \equiv b\left(\bmod\hspace{1ex} m_{1}\right), a \equiv b\left(\bmod\hspace{1ex} m_{2}\right), \cdots, a \equiv b\left(\bmod\hspace{1ex} m_{n}\right)$,则
+\begin{equation*}
+	a \equiv b\left(\bmod\hspace{1ex} \left[m_{1}, m_{2}, \cdots, m_{n}\right]\right) .
+\end{equation*}
+
+\corollary (1)若$a_{i} \equiv b_{i}(\bmod \hspace{1ex}m)(i=1, \cdots, n)$,则
+\begin{equation*}
+	\sum_{i=1}^{n} a_{i} \equiv \sum_{i=0}^{n} b_{i}(\bmod \hspace{1ex}m) ; \prod_{i=1}^{n} a_{i} \equiv \prod_{i=0}^{n} b_{i}(\bmod \hspace{1ex}m)
+\end{equation*}
+
+(2)设整系数多项式$f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{0}$,若 $x_{1} \equiv x_{2}(\bmod\hspace{1ex} m)$,则
+\begin{equation*}
+	f\left(x_{1}\right) \equiv f\left(x_{2}\right)(\bmod \hspace{1ex}m)
+\end{equation*}
+
+\theorem [(可约性)]
+\begin{enumerate}[itemindent=2em]
+	\item[(1)] $a \equiv b(\bmod \hspace{1ex}m), d \mid m, d>0 \Rightarrow a \equiv b(\bmod \hspace{1ex}d)$
+	
+	$a \equiv b(\bmod \hspace{1ex}m), d \mid(a, b, m), d>0 \Rightarrow \dfrac{a}{d} \equiv \dfrac{b}{d}\left(\bmod \hspace{1ex}\dfrac{m}{d}\right)$;
+	\item[(2)] $a \equiv b(\bmod \hspace{1ex}m) \Rightarrow(a, m)=(b, m)$;
+	\item[(3)] $a \equiv b(\bmod \hspace{1ex}m) \Rightarrow a k \equiv b k(\bmod \hspace{1ex}m k)(k>0, k \in \mathbb{N})$;
+	\item[(4)] $a c \equiv b c(\bmod \hspace{1ex}m),(c, m)=1 \Rightarrow a \equiv b(\bmod \hspace{1ex}m)$.
+\end{enumerate}
+
+\proof (1)显然成立.
+
+(2)由于$m \mid(a-b)$,存在$t \in \mathbb{Z}$,使得$a=b+m t$,于是$(a, m)=(b+m t, m)=(b, m)$.
+
+(3)$a \equiv b(\bmod \hspace{1ex}m) \Rightarrow m|(a-b) \Rightarrow k m|(k a-k b) \Rightarrow k a \equiv k b(\bmod \hspace{1ex}k m)$
+
+(4)因为$a c \equiv b c(\bmod \hspace{1ex}m) \Rightarrow m \mid c(a-b)$,又$(c, m)=1$,故$m \mid(a-b)$,即$a \equiv b(\bmod \hspace{1ex}m)$.
+
+证毕.
+
+\example 设整数$a$的十进制表示为$a=\overline{a_{n-1} a_{n-2} \cdots a_{0}}\left(0 \leqslant a_{i} \leqslant 9,\right.$ $\left.0 \leqslant i \leqslant n-1, a_{n-1} \neq 0\right)$,即$a=a_{n-1} \times 10^{n-1}+\cdots+a_{1} \times 10+a_{0}$,证明:
+\begin{enumerate}[itemindent=2em]
+	\item[(i)] $3|a \Leftrightarrow 3| \displaystyle{\sum_{i=0}^{n-1}} a_{i}$
+	\item[(ii)] $9|a \Leftrightarrow 9| \displaystyle{\sum_{i=0}^{n-1}} a_{i}$;
+	\item[(iii)] $11|a \Leftrightarrow 11| \displaystyle{\sum_{i=0}^{n-1}}(-1)^{i} a_{i}$;
+	\item[(iv)] $13|a \Leftrightarrow 13| \overline{a_{2} a_{1} a_{0}}-\overline{a_{5} a_{4} a_{3}}+\cdots$
+\end{enumerate}
+
+\proof 由$10^{\circ} \equiv 1,10^{1} \equiv 1, \cdots, 10^{i} \equiv 1(\bmod \hspace{1ex}3)(i \in \mathbb{N})$及推论2.1.1得
+\begin{equation*}
+	a=\sum_{i=0}^{n-1} a_{i} \times 10^{i} \equiv \sum_{i=0}^{n-1} a_{i}(\bmod \hspace{1ex}3)
+\end{equation*}
+由此可得结论(i).类似可证结论(ii)、(iii)和(iv).证毕.
+
+\remark 一般,当求十进制数$a=\overline{a_{n-1} a_{n-2} \cdots a_{1} a_{0}}\left(0 \leqslant a_{i} \leqslant 9\right)$ 被$m$除的数字特征时,首先求出正整数$k$,使得$10^{k} \equiv-1$ 或 $1(\bmod \hspace{1ex}m)$.
+
+其次,将$a=\overline{a_{n-1} a_{n-2} \cdots a_{1} a_{0}}$写成$a=\overline{a_{k-1} a_{k-2} \cdots a_{1} a_{0}} \times 10^{0}+\overline{a_{2 k-1} a_{2 k-2} \cdots a_{k}} \times 10^{k}+\cdots$的形式,最后利用推论2.1.1可证得结论.
+
+\example 求$2^{2^{5}}+1$被$641$除的余数.
+
+\solve 依次计算同余式$2^{2} \equiv 4,2^{4} \equiv 16,2^{8} \equiv 256,2^{16} \equiv 154,2^{32} \equiv-1(\bmod \hspace{1ex}641)$. 因此$2^{2^{5}}+1 \equiv 0(\bmod \hspace{1ex}641)$,即$641 \mid\left(2^{2^{5}}+1\right)$.这个结论说明费马数$F_{5}=2^{2^{5}}+1$是合数.
+
+\remark 一个整数模$m$的余数有$m$种可能值,但对于幂次方整数,模$m$的余数的个数则可能大大减少,如,一个完全平方数模4同余于0或1,模8同余于0,1和4,模3同余于0或1,模5同余于0或$\pm 1$,一个完全立方数模9同余于0或$\pm 1$,一个整数的四次方模16同余于0或1.这些事实构成利用同余知识解(证)问题的一个基本点.
+
+\example 求$n=7^{7^{7}}$的个位数字.
+
+\solve 由于$7^{1} \equiv-3,7^{2} \equiv-1,7^{4} \equiv 1(\bmod \hspace{1ex}10)$,因此,若$7^{7} \equiv r(\bmod \hspace{1ex}4)$,则
+\begin{equation}\label{equ2.1}
+	n=7^{7^{7}} \equiv 7^{r}(\bmod \hspace{1ex}10)
+\end{equation}
+由于$7^{7} \equiv(-1)^{7} \equiv-1 \equiv 3(\bmod \hspace{1ex}4)$, 所以,由式\eqref{equ2.1}得
+\begin{equation*}
+	n=7^{7^{7}} \equiv 7^{3} \equiv(-3)^{3} \equiv-7 \equiv 3(\bmod \hspace{1ex}10)
+\end{equation*}
+即$n$的个位数字是$3$.
+
+\entry 一般的,求$a^{b^{c}}$ 关于模 $m$ 的余数,可按以下步骤进行:
+\begin{enumerate}[itemindent=2em]
+	\item[\ding{172}] 求出整数$k$,使得$a^{k} \equiv 1(\bmod\hspace{1ex} m)$;(求$k$的目的是为了简化同余式的计算)
+	\item[\ding{173}] 求出正整数$r(r<k)$,使得$b^{c} \equiv r(\bmod \hspace{1ex}k)$;
+	\item[\ding{174}] 再计算$a^{b^{c}} \equiv a^{r}(\bmod \hspace{1ex}m)$.
+\end{enumerate}
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      &   \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}
+

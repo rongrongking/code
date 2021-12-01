@@ -1,0 +1,225 @@
+%-----------主文档 格式定义---------------------------------
+\addtolength{\headsep}{-0.1cm}        %页眉位置
+%\CTEXsetup[name={第,讲},number={\chinese{chapter}}]{chapter}
+\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\thechapter\,讲}{1em}{}
+%\CTEXsetup[nameformat+={\Large},titleformat+={\Large}]{chapter}
+%\CTEXsetup[beforeskip={-23pt},afterskip={20pt plus 2pt minus 2pt}]{chapter}
+
+%\CTEXsetup[format={\bf\flushleft}]{section}
+%\CTEXsetup[nameformat+={\large},titleformat+={\large}]{section}
+\setcounter{secnumdepth}{4}
+%\setcounter{chapter}{+7}
+%\titleformat{\chapter}{\centering\Huge\bfseries}{第\,\chinese{chapter}\,讲}{1em}{}
+\renewcommand\thesection{\arabic{section}}
+\titleformat{\section}{\centering\zihao{3}\bfseries}{第\,\chinese{section}\,讲}{1em}{}
+%\titleformat{\section}{\zihao{3}\bfseries}{\chinese{section}、}{0em}{}
+\titleformat{\subsection}{\zihao{4}\bfseries}{\chinese{subsection}、}{0em}{}
+%----------定义、定理环境------------------------
+\newcounter{entry}
+\counterwithin*{entry}{section}
+
+%\newcommand{\entry}{\vskip1ex\refstepcounter{entry}\noindent$\text{\ding{226}}{\makebox%
+%[10pt]{\footnotesize\bf\arabic{chapter}.\arabic{entry}}\hspace{5pt}}$}
+
+\newcommand{\entry}{\vskip1ex\refstepcounter{entry}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}}\hspace{5pt}}$}
+
+\newcounter{example}
+\counterwithin*{example}{section}
+\newcommand{\example}{\vskip1ex\refstepcounter{entry}\refstepcounter{example}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 例\arabic{example}}\hspace{5pt}}$}
+
+\newcounter{definition}
+\counterwithin*{definition}{section}
+\newcommand{\definition}{\vskip1ex\refstepcounter{entry}\refstepcounter{definition}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 定义\arabic{definition}}\hspace{5pt}}$}
+
+\newcounter{theorem}
+\counterwithin*{theorem}{section}
+\newcommand{\theorem}{\vskip1ex\refstepcounter{entry}\refstepcounter{theorem}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 定理\arabic{theorem}}\hspace{5pt}}$}
+
+\newcounter{proposition}
+\counterwithin*{proposition}{section}
+\newcommand{\proposition}{\vskip1ex\refstepcounter{entry}\refstepcounter{proposition}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 命题\arabic{proposition}}\hspace{5pt}}$}
+
+\newcounter{property}
+\counterwithin*{property}{section}
+\newcommand{\property}{\vskip1ex\refstepcounter{entry}\refstepcounter{property}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 性质\arabic{property}}\hspace{5pt}}$}
+
+\newcounter{lemma}
+\counterwithin*{lemma}{section}
+\newcommand{\lemma}{\vskip1ex\refstepcounter{entry}\refstepcounter{lemma}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 引理\arabic{lemma}}\hspace{5pt}}$}
+
+\newcounter{corollary}
+\counterwithin*{corollary}{theorem}
+\newcommand{\corollary}{\vskip1ex\refstepcounter{entry}\refstepcounter{corollary}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 推论\arabic{corollary}}\hspace{5pt}}$}
+
+\newcounter{remark}
+\counterwithin*{remark}{section}
+\newcommand{\remark}{\vskip1ex\refstepcounter{entry}\refstepcounter{remark}$\text{\ding{228}}{\makebox{\bf\arabic{section}.\arabic{entry}\heiti 注}\hspace{5pt}}$}
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+%\numberwithin{equation}{section}
+%\newcounter{Lem}[chapter]
+%\renewcommand{\theLem}{\thechapter.\arabic{Lem}}
+%\newenvironment{lemma}{\par{\heiti 引理\stepcounter{Lem}\theLem}\hspace{1ex}}{\par}
+
+%\newcounter{Coro}[chapter]
+%\renewcommand{\theCoro}{\thechapter.\arabic{Coro}}
+
+%------------------------------------------
+%\newenvironment{proof}{\par{\heiti{证明:}}}{\hfill $\square$ \par}
+%p\newenvironment{solution}{\par{\heiti{解:}}}{\hfill $\square$ \par}
+
+\newcommand{\exercise}[1]{\noindent\textbf{练习#1}}
+\newcommand{\note}{\noindent\textbf{注记}\ }
+\newcommand{\solve}{\textbf{解:}\ }
+\newcommand{\proof}{\textbf{证明:}\ }
+\newcommand{\analysis}{\noindent\textbf{分析}\ }
+
+
+% Matlab highlight color settings
+%\definecolor{mBasic}{RGB}{248,248,242}       % default
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
+\definecolor{mNumber}{RGB}{128,128,128}       % gray
+
+% Matlab highlight color settings
+%\definecolor{mBasic}{RGB}{248,248,242}       % default
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mBackground}{RGB}{245,245,245}   % lightgrey
+%\definecolor{mNumber}{RGB}{128,128,128}       % gray
+\definecolor{mNumber}{RGB}{134,145,148}       % gray
+\definecolor{mNumberbg}{RGB}{237,240,241}     % lightgrey
+
+% Python highlight color settings
+%\definecolor{pBasic}{RGB}{248, 248, 242}     % default
+\definecolor{pKeyword}{RGB}{228,0,128}        % magenta
+\definecolor{pString}{RGB}{148,0,209}         % purple
+\definecolor{pComment}{RGB}{117,113,94}       % gray
+\definecolor{pIdentifier}{RGB}{166, 226, 46}  %
+\definecolor{pBackground}{RGB}{245,245,245}   % lightgrey
+\definecolor{pNumber}{RGB}{128,128,128}       % gray
+
+\lstnewenvironment{Matlab}[1]{
+	\lstset{language=Matlab,               % choose the language of the code
+		%frame=tlbr,
+		xleftmargin=10pt,
+		xrightmargin=10pt,
+		frame=l,
+		framesep=15pt,%framerule=0pt,  % sets the frame style
+		%frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+		basicstyle=\small\ttfamily,
+		keywordstyle={\color{mKeyword}},     % sets color for keywords
+		stringstyle={\color{mString}},       % sets color for strings
+		commentstyle={\color{mComment}},     % sets color for comments
+		backgroundcolor=\color{mBackground}, % choose the background color
+		%title=#1,                            % \lstname show the filename of files
+		keywords={break,case,catch,classdef,continue,else,elseif,end,for,
+			function,global,if,otherwise,parfor,persistent,return,spmd,switch,try,while},
+		showspaces=false,                    % show spaces adding particular underscores
+		showstringspaces=false,              % underline spaces within strings
+		showtabs=false,                      % show tabs within strings adding particular underscores
+		tabsize=4,                           % sets default tabsize to 2 spaces
+		%captionpos=t,                        % sets the caption-position to bottom
+		%breaklines=true,                     % sets automatic line breaking
+		framexleftmargin=5pt,
+		fillcolor=\color{mNumberbg},
+		rulecolor=\color{mNumberbg},
+		numberstyle=\tiny\color{mNumber},
+		numbersep=9pt,                      % how far the line-numbers are from the code
+		numbers=left,                        % where to put the line-numbers
+		stepnumber=1,                        % the step between two line-numbers.
+}}{\lstname}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+	language=Matlab,
+	aboveskip=3mm,
+	belowskip=3mm,
+	xleftmargin=10pt,
+	xrightmargin=10pt,
+	frame=l,
+	framesep=15pt,%framerule=0pt,  % sets the frame style
+	%frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20},
+	basicstyle=\small\ttfamily,
+	keywordstyle={\color{mKeyword}},     % sets color for keywords
+	stringstyle={\color{mString}},       % sets color for strings
+	commentstyle={\color{mComment}},     % sets color for comments
+	backgroundcolor=\color{mBackground}, % choose the background color
+	showstringspaces=false,
+	columns=flexible,
+	backgroundcolor=\color{mBackground}, % choose the background color
+	numbers=left,%设置行号位置none不显示行号
+	keywords={break,case,catch,classdef,continue,else,elseif,end,for,
+		function,global,if,otherwise,parfor,persistent,return,spmd,switch,try,while},
+	showspaces=false,                    % show spaces adding particular underscores
+	showstringspaces=false,              % underline spaces within strings
+	showtabs=false,                      % show tabs within strings adding particular underscores
+	tabsize=4,                           % sets default tabsize to 2 spaces
+	%numberstyle=\tiny\courier, %设置行号大小
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	escapeinside=``,%逃逸字符(1左面的键)，用于显示中文例如在代码中`中文...`
+	tabsize=4,
+	extendedchars=false %解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	framexleftmargin=5pt,
+	fillcolor=\color{mNumberbg},
+	rulecolor=\color{mNumberbg},
+	numberstyle=\tiny\color{mNumber},
+	numbersep=9pt,                      % how far the line-numbers are from the code
+	numbers=left,                        % where to put the line-numbers
+	stepnumber=1,                        % the step between two line-numbers.
+}
+
+%\newcommand{\exercise}[1]{\noindent\tcbox[on line,top=0mm,bottom=0mm,%
+%	right=0mm,left=0mm]{\bfseries 练习#1}\ }
+%\newcommand{\note}{\noindent\textbf{注记}\ }
+%\newcommand{\solve}{\noindent\textbf{解}\ }
+%\newcommand{\analysis}{\noindent\textbf{分析}\ }
+%-------------定义页眉下单隔线----------------
+\newcommand{\makeheadrule}{\makebox[0pt][l]{\rule[.7\baselineskip]{\headwidth}{0.3pt}}\vskip-.8\baselineskip}
+%-------------定义页眉下双隔线----------------
+
+%用tikz画边框	
+
+\def\Obiankuang{\leavevmode\vbox to0pt{
+		\vss\rlap{\hskip 0cm
+			\tikz \draw(16.6,0)--(0,0)--(0,-25.6)--(16.6,-25.6)--(16.6,0)--(13.6,0)--(13.6,-25.6);		
+		}\vskip -25.7cm}}
+
+\def\Ebiankuang{\leavevmode\vbox to0pt{
+		\vss\rlap{\hskip -3cm
+			\tikz \draw(16.6,0)--(0,0)--(0,-25.6)--(16.6,-25.6)--(16.6,0)--(3,0)--(3,-25.6);		
+		}\vskip -25.7cm}}
+%\reversemarginpar
+%\fancyhead{} 
+%\chead{}
+%\lhead[E]{\boxhack \boxhackb } %边框 
+%\lhead[O]{\boxhack \boxhackb } %边框 
+%\lhead[E]{\lbiankuang}%边框 
+%\rhead[O]{\rbiankuang}%边框 
+
+\makeatletter
+%\renewcommand{\headrule}{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi\makeheadrule}}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}{}}    %去掉节标题中的点
+\fancyhf{} %清空页眉
+\renewcommand\headrulewidth{0pt}
+\fancyfoot[C]{\kaishu{\footnotesize-~\thepage~-}}         % 页码显示左边
+\fancyhead[LO]{\Obiankuang} % 奇数页码中间显示节标题
+\fancyhead[LE]{\Ebiankuang}  % 偶数页码中间显示章标题
+
+%\lhead[O]{\Obiankuang}%边框
+%\lhead[E]{\Ebiankuang}%边框
+
+%----------------------------------------------------------
+\setlength{\parindent}{2em}

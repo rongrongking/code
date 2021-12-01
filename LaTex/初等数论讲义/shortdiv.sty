@@ -1,0 +1,154 @@
+%%
+%% Package: shortdivision.sty version 1.0.0
+%% Author: Nan Geng
+%% Email: nangeng@nwafu.edu.cn
+%% Date: 2021-08-12
+%% License: Latex Project Public License
+%%
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\RequirePackage{xparse,tabularray,xcolor}
+\ProvidesExplPackage{shortdiv}{2021/08/12}{1.0.0} {Typeset short division}
+
+% 格式控制变量
+\tl_new:N \l__outtab_style_tl
+\tl_new:N \l__innercell_style_tl
+\tl_new:N \l__valign_style_tl
+% 格式Key-value定义
+\keys_define:nn { shortdiv }
+  {
+    outtab .tl_set:N  = \l__outtab_style_tl,
+    outtab .default:n = {
+      rows = {abovesep=0pt,belowsep=0pt},
+      column{1} = {leftsep=0pt},
+      column{2} = {rightsep=0pt},
+    },
+    outtab .initial:n = {
+      rows = {abovesep=0pt,belowsep=0pt},
+      column{1} = {leftsep=0pt},
+      column{2} = {rightsep=0pt},
+    },
+
+    innercell .tl_set:N  = \l__innercell_style_tl,
+    innercell .default:n = {
+      hline{2} = {0.8pt,solid},
+      vline{1} = {0.8pt,solid},
+      rows = {abovesep=0pt,belowsep=0pt},
+      columns = {leftsep=1pt,rightsep=1pt},
+    },
+    innercell .initial:n = {
+      hline{2} = {0.8pt,solid},
+      vline{1} = {0.8pt,solid},
+      rows = {abovesep=0pt,belowsep=0pt},
+      columns = {leftsep=1pt,rightsep=1pt},
+    },
+
+    valign .tl_set:N  = \l__valign_style_tl,
+    valign .default:n = {t},
+    valign .initial:n = {t},
+  }
+
+% 计算过程变量
+\tl_new:N \l__shortdiv_table_contents_tl
+\int_new:N \l__shortdiv_div_int
+\int_new:N \l__shortdiv_rem_int
+\bool_new:N \l__shortdiv_first_row_bool
+
+% 生成表格中的一行数据
+% #1 除数(数制基数)
+% #2 被除数
+\cs_new_protected:Npn \__shortdiv_gen_tab_row:nn #1 #2
+  {
+    \tl_put_right:Nx \l__shortdiv_table_contents_tl
+      {
+        \int_compare:nF { #2 == 0 } { #1~ }
+        \__shortdiv_div:n { #2 }
+        &
+        \bool_if:NF \l__shortdiv_first_row_bool % 第1行不输出余数
+          {
+            余~\int_to_arabic:n { \l__shortdiv_rem_int }
+          }
+        \exp_not:N \\
+      }
+  }
+
+% 生成表格
+\cs_new_protected:Npn \shortdiv_base:nn #1 #2
+  {
+    \tl_clear:N \l__shortdiv_table_contents_tl
+    \bool_set_true:N \l__shortdiv_first_row_bool
+    \int_set:Nn \l__shortdiv_div_int { #1 }
+    \__shortdiv_loop:n { #2 }
+
+    % 通过参数可以调整表格样式
+    \tl_put_right:cx { l__tblr_default_tblr_inner_tl } { , \l__outtab_style_tl }
+    \tl_put_right:cx { l__tblr_default_tblr_outer_tl } { , \l__valign_style_tl }
+    \begin{tblr}[expand=\l__shortdiv_table_contents_tl]{rl}%
+      \l__shortdiv_table_contents_tl
+    \end{tblr}
+  }
+
+% 循环相除
+% #1 除数(数据基数)
+\cs_new_protected:Npn \__shortdiv_loop:n #1
+  {
+    \int_do_until:nNnn {\l__shortdiv_div_int} = {0}
+      {
+        % 生成一行表格数据
+        \__shortdiv_gen_tab_row:nn { #1 } { \int_to_arabic:n { \l__shortdiv_div_int } }
+        % 以后各行需要输出余数
+        \bool_set_false:N \l__shortdiv_first_row_bool
+        \int_set:Nn \l__shortdiv_rem_int
+          {
+            \int_mod:nn { \l__shortdiv_div_int } { #1 }
+          }
+        \int_set:Nn \l__shortdiv_div_int
+          {
+            \int_div_truncate:nn { \l__shortdiv_div_int } { #1 }
+          }
+      }
+    % 最后一行数据
+    \__shortdiv_gen_tab_row:nn { #1 } { \int_to_arabic:n { \l__shortdiv_div_int } }
+  }
+
+% 生成一个单元格数据(单列单行数据)
+% #1 被除数
+\cs_new_protected:Npn \__shortdiv_div:n #1
+  {
+    \int_compare:nTF { #1 == 0 }
+      {
+        #1
+      }
+      {
+        \tl_put_right:cx { l__tblr_default_tblr_inner_tl } { , \l__innercell_style_tl }
+        \begin{tblr}{r}%
+          #1
+          \exp_not:N \\
+        \end{tblr}
+      }
+  }
+
+% 样式设置用户接口
+% #1 tabularray表格语法的表格样式
+% shortdiv/outtab键用于设置短除式整体样式
+% shortdiv/innercell键用于设置短除式数字单元样式
+% shortdiv/valign键用于不同短除式间的垂直对齐方式(t,b,c)
+\NewDocumentCommand{\shortdivset}{ m }
+  {
+    \keys_set:nn { shortdiv } {#1}
+  }
+
+% 短除式排版用户接口
+% #1 tabularray表格语法的表格样式
+% #2 被除数
+% #3 除数(数制)
+\NewDocumentCommand{\shortdiv}{ O{} m m}
+  {
+    \group_begin:
+      \keys_set:nn { shortdiv } {#1}
+      \shortdiv_base:nn { #2 } { #3 }
+    \group_end:
+  }
+
+\endinput
+%%
+%% End of file `shortdiv.sty'.

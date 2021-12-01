@@ -1,0 +1,287 @@
+\section{二元一次不定方程}
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{32mm}|p{95.6mm}}
+		\hline 
+		\textbf{教学目标：}       & 掌握二元一次不定方程的解法  \\ \hline
+		\textbf{教学重点：}       & 二元一次不定方程的解法 \\ \hline
+		\textbf{教学难点：}       & 二元一次不定方程的解法\\ \hline
+		\textbf{教学方法和手段：} & 讲授  \\ \hline
+		\textbf{教学时数：}       & 4课时 \\ \hline
+	\end{tabular}
+\end{table}
+\entry 一只箱子中有若干只蜜蜂和蜘蛛,它们共有$46$只脚,问其中蜜蜂和蜘蛛各多少只?
+
+如果设箱子中蜜蜂、蜘蛛数分别为$x, y$只,则依题意得
+\begin{equation}\label{equ3.1}
+	6 x+8 y=46
+\end{equation}
+这一方程有无限多组解,但是,符合题意的$x$和$y$只能是取正整数的解.
+
+在介绍一般不定方程的求解之前,先尝试解决如上给出的蜜蜂和蜘蛛的只数问题.
+
+由式\eqref{equ3.1}可得$x=\dfrac{23-4 y}{3}$,由于$x, y$必须是正整数,故$y$只能取$1,2,3,4,5$(否则,若$y$大于5,则$x$ 必为负数).下面通过直接计算得到相应的$x$值为
+\begin{equation*}
+	\begin{array}{cccccc}
+		y & 1 & 2 & 3 & 4 & 5 \\
+		x & \dfrac{19}{3} & 5 & \dfrac{11}{3} & \dfrac{7}{3} & 1
+	\end{array}
+\end{equation*}
+由此可知,蜜蜂和咖蛛的只数分别为$x=5, y=2$或$x=1, y=5$.
+
+\definition 设$a, b$是非零整数,$c$是整数,关于未知数$x, y$的方程
+\begin{equation}\label{equ3.2}
+	a x+b y=c
+\end{equation}
+称为二元一次不定方程.
+
+讨论二元一次方程是否有整数解的判别条件.
+
+约定:将整数$a_{1}, \cdots, a_{k}$的最大公因数记作$\operatorname{gcd}\left(a_{1}, \cdots, a_{k}\right)$.
+
+\theorem 设$d=\operatorname{gcd}(a, b)$,则式\eqref{equ3.2}有整数解的充分必要条件是$d \mid c$.
+
+\proof \textbf{必要性}\hspace{1ex}若式\eqref{equ3.2}有一组整数解,设为$x=x_{0}, y=y_{0}$,则$a x_{0}+b y_{0}=c$.因$d$整除$a$及$b$,因而也整除$c$.必要性得证. 
+
+\textbf{充分性}\hspace{1ex}若$d \mid c$,则存在整数$c_{1}$,使得$c=d c_{1}$.又由于$d=\operatorname{gcd}(a, b)$,由推论1.3.1知,存在整数$s, t$满足
+\begin{equation*}
+	a s+b t=d
+\end{equation*}
+于是有
+\begin{equation*}
+	a\left(s c_{1}\right)+b\left(t c_{1}\right)=d c_{1}
+\end{equation*}
+令$x_{0}=s c_{1}, y_{0}=t c_{1}$,即得$a x_{0}+b y_{0}=c$,故式\eqref{equ3.2}有整数解$\left(x_{0}, y_{0}\right)=\left(s c_{1}, t c_{1}\right)$.充分性得证.
+
+证毕.
+
+下面讨论当式\eqref{equ3.2}有解时,如何求得其全部整数解.
+
+\theorem 若方程\eqref{equ3.2}有整数解$\left(x_{0}, y_{0}\right)$,则其全部整数解为
+\begin{equation}\label{equ3.3}
+	\begin{cases}
+		x=x_{0}-b_{1} t \\
+		y=y_{0}+a_{1} t
+	\end{cases} \quad(t=0, \pm 1, \pm 2, \cdots)
+\end{equation}
+其中,$d=\operatorname{gcd}(a, b), a=a_{1} d, b=b_{1} d$.
+
+\proof 首先证明,式\eqref{equ3.3}给出的任一组整数$(x, y)$都适合式\eqref{equ3.2}.
+
+事实上,由于$x=x_{0}, y=y_{0}$是式\eqref{equ3.2}的解,所以$a x_{0}+b y_{0}=c$.因此,将式\eqref{equ3.3}代人式\eqref{equ3.2}得
+\begin{equation*}
+	\begin{split}
+		a\left(x_{0}-b_{1} t\right)+b\left(y_{0}+a_{1} t\right)&=\left(a x_{0}+b y_{0}\right)+\left(b a_{1}-a b_{1}\right) t \\
+		&=c+\left(d b_{1} a_{1}-d a_{1} b_{1}\right) t=c
+	\end{split}
+\end{equation*}
+这就表明对任意整数$t$,式\eqref{equ3.3}给出的任一组整数$(x, y)$是式\eqref{equ3.2}的解.
+
+其次证明,式\eqref{equ3.2}的任一组解$\left(x^{\prime}, y^{\prime}\right)$都具有式\eqref{equ3.3}的形式.
+
+设$\left(x^{\prime}, y^{\prime}\right)$是式\eqref{equ3.2}的任一组解,则$a x^{\prime}+b y^{\prime}=c$;又因为$a x_{0}+b y_{0}=c$,两式相减得
+\begin{equation*}
+	a\left(x^{\prime}-x_{0}\right)+b\left(y^{\prime}-y_{0}\right)=0
+\end{equation*}
+但$a=a_{1} d, b=b_{1} d$,于是
+\begin{equation}\label{equ3.4}
+	a_{1}\left(x^{\prime}-x_{0}\right)=-b_{1}\left(y^{\prime}-y_{0}\right)
+\end{equation}
+
+由于$d=\operatorname{gcd}(a, b)$,故$\operatorname{gcd}\left(a_{1}, b_{1}\right)=1$,因此,由式\eqref{equ3.4}知$a_{1} \mid\left(y^{\prime}-y_{0}\right)$.故存在整数$t$,使得$y^{\prime}-y_{0}=a_{1} t$,亦即$y^{\prime}=y_{0}+a_{1} t$,代入式 \eqref{equ3.4}得$x^{\prime}=x_{0}-b_{1} t$,因此,$\left(x^{\prime}, y^{\prime}\right)$可以表示成式\eqref{equ3.3}的形式,故式\eqref{equ3.3}给出了式\eqref{equ3.2}的一切整数解.证毕.
+
+\remark 定理3.1.2中的式\eqref{equ3.3}也可写成
+\begin{equation*}
+	\begin{cases}
+		x=x_{0}+b_{1} t \\
+		y=y_{0}-a_{1} t
+	\end{cases} \quad(t=0, \pm 1, \pm 2, \cdots)
+\end{equation*}
+的形式.
+
+\entry 从定理3.1.1的证明过程可以发现,关键是证明方程
+\begin{equation*}
+	a x+b y=\operatorname{gcd}(a, b)=d
+\end{equation*}
+有整数解.因此,若要找出一般二元一次不定方程求特解的方法,应该从此方程人手.
+
+首先,方程$a x+b y=\operatorname{gcd}(a, b)$等价于
+\begin{equation*}
+	\frac{a}{\operatorname{gcd}(a, b)} x+\frac{b}{\operatorname{gcd}(a, b)} y=1
+\end{equation*}
+而在此方程里,未知数$x, y$的系数是互素的,所以,不失一般性,只要讨论如何求出形如
+\begin{equation}\label{equ3.5}
+	a x+b y=1, \quad \operatorname{gcd}(a, b)=1
+\end{equation}
+的方程的一个整数解即可.
+
+容易知道,由式\eqref{equ3.5}的一个特殊解可以得出方程$|a| x+|b| y=1$的一个特殊解,反之亦然.于是,可以假定$a>0, b>0$.为了求出满足式\eqref{equ3.5}的$x, y$,运用辗转相除法,有
+\begin{equation*}
+	\begin{array}{ll}
+		a=b q_{1}+r_{1}, & 0<r_{1}<b \\
+		b=r_{1} q_{2}+r_{2}, & 0<r_{2}<r_{1} \\
+		\quad \cdots \\
+		r_{n-2}=r_{n-1} q_{n}+r_{n}, & 0<r_{n}<r_{n-1} \\
+		r_{n-1}=r_{n} q_{n+1}, & r_{n+1}=0
+	\end{array}
+\end{equation*}
+因为$\operatorname{gcd}(a, b)=1$,故$r_{n}=1$.由定理1.5.1知,利用辗转相除及列表方法可计算出
+\begin{equation*}
+	Q_{n} a-P_{n} b=(-1)^{n+1} r_{n}
+\end{equation*}
+即$a\left[(-1)^{n-1} Q_{n}\right]+b\left[(-1)^{n} P_{n}\right]=1$
+
+因此,式\eqref{equ3.5}有一组特解
+\begin{equation*}
+	x_{0}=(-1)^{n-1} Q_{n}, \quad y_{0}=(-1)^{n} P_{n}
+\end{equation*}
+
+\remark 求解二元一次不定方程步骤:
+\begin{enumerate}[itemindent=2em]
+	\item[\ding{172}] 首先利用定理3.1.1判断不定方程是否有解;
+	\item[\ding{173}] 在有解的情况下,关键在于求出其特解;
+	\item[\ding{174}] 当不定方程有解且其系数绝对值不大时,可用观察法求出其特解;当方程系数较大时,可考虑用辗转相除法求特解.
+\end{enumerate}
+
+\example 求不定方程$18 x+24 y=9$的整数解.
+
+\solve 由于$\operatorname{gcd}(18,24)=6\nmid 9$,所以原方程无整数解.
+
+\example 求$10 x-7 y=17$的全部整数解.
+
+\solve 由于$\operatorname{gcd}(10,7)=1 \mid 17$,所以原方程有整数解.由观察可得原方程的一组特解为$x_{0}=1, y_{0}=-1$.因此,原方程的全部整数解是
+\begin{equation*}
+	x=1-7 t, \quad y=-1-10 t \quad(t=0, \pm 1, \pm 2, \cdots)
+\end{equation*}
+
+\example 求方程$907 x_{1}+731 x_{2}=2107$的整数解.
+
+\solve \textbf{解法一}先用展转相除法得
+\begin{center}
+	\begin{tabular}{c|cc|c}
+		1 & 731 & 907 &   \\
+		  & 704 & 731 &   \\ \cline{2-3}
+		6 &  27 & 176 & 4 \\
+		  &  14 & 162 &   \\ \cline{2-3}
+		1 &  13 &  14 & 1 \\
+		  &  13 &  13 &   \\ \cline{2-3}
+		&    0 &    1 & 13 \\
+	\end{tabular}	
+\end{center}
+
+故$\operatorname{gcd}(907,731)=1$.再用列表方法计算相应的特解如下表.
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline$n$ & 0 & 1 & 2 & 3 & 4 & 5\\
+		\hline$q_{n}$ & & 1 & 4 & 6 & 1 & 1 \\
+		\hline$P_{n}$ & 1 & 1 & 5 & 31 & 36 & 67 \\
+		\hline$Q_{n}$ & 0 & 1 & 4 & 25 & 29 & 54 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+所以$907 \times 54-731 \times 67=\operatorname{gcd}(907,731)=1$
+
+因而,原方程有一组特解
+\begin{equation*}
+	x_{1}^{\prime}=54 \times 2107, \quad x_{2}^{\prime}=-67 \times 2107
+\end{equation*}
+故,原方程组的一切整数解为
+\begin{equation*}
+	\begin{cases}
+		x_{1}=54 \times 2107+731 t \\
+		x_{2}=-67 \times 2107-907 t
+	\end{cases} \quad(t=0, \pm 1, \cdots)
+\end{equation*}
+
+\textbf{解法二}因为$\operatorname{gcd}(907,731)=1$,故方程有整数解.对系数绝对值较小的$x_{2}$进行如下变形:
+\begin{equation*}
+	x_{2}=\frac{1}{731}\left(-907 x_{1}+2107\right)=-x_{1}+3+\frac{1}{731}\left(-176 x_{1}-86\right) \in \mathbb{Z}
+\end{equation*}
+
+令$x_{3}=\dfrac{1}{731}\left(-176 x_{1}-86\right) \in \mathbb{Z}$,则
+\begin{equation*}
+	x_{1}=-4 x_{3}+\frac{1}{176}\left(-27 x_{3}-86\right)
+\end{equation*}
+
+令$x_{4}=\dfrac{1}{176}\left(-27 x_{3}-86\right) \in \mathbb{Z}$,则
+\begin{equation*}
+	x_{3}=-7 x_{4}-3+\frac{1}{27}\left(13 x_{4}-5\right)
+\end{equation*}
+
+令$x_{5}=\dfrac{1}{27}\left(13 x_{4}-5\right) \in \mathbb{Z}$,则
+\begin{equation*}
+	x_{4}=2 x_{5}+\frac{1}{13}\left(x_{5}+5\right)
+\end{equation*}
+
+令$x_{6}=\dfrac{1}{13}\left(x_{5}+5\right) \in \mathbb{Z}$,则
+\begin{equation*}
+	x_{5}=13 x_{6}-5
+\end{equation*}
+
+此处$x_{5}$的系数为$1$,辗转相除到此为止,将$x_{6}$视为参数,按上述过程逆向依次代入,直至得出$x_{1}, x_{2}$的表达式为止.具体操作过程是
+
+\begin{equation*}
+	\begin{aligned}
+		&x_{4}=2 x_{5}+x_{6}=2\left(-5+13 x_{6}\right)+x_{6}=-10+27 x_{6} \\
+		&x_{3}=-7 x_{4}-3+x_{5}=-7\left(-10+27 x_{6}\right)-3+\left(-5+13 x_{6}\right)=62-176 x_{6} \\
+		&x_{1}=-258+731 x_{6} \\
+		&x_{2}=323-907 x_{6}
+	\end{aligned}
+\end{equation*}
+
+令$x_{6}=t$,则方程的解为
+\begin{equation*}
+	\begin{cases}
+		x_{1}=-258+731 t \\
+		x_{2}=323-907 t
+	\end{cases} \quad(t=0, \pm 1, \pm 2, \cdots)
+\end{equation*}
+
+\example 求不定方程$117 x_{1}+21 x_{2}=38$的整数解.
+
+\solve $x_{2}=\dfrac{1}{21}\left(-117 x_{1}+38\right)=-6 x_{1}+2+\dfrac{1}{21}\left(9 x_{1}-4\right)$
+
+令$x_{3}=\dfrac{1}{21}\left(9 x_{1}-4\right) \in \mathbb{Z}$,则
+\begin{equation*}
+	x_{1}=\frac{1}{9}\left(21 x_{3}+4\right)=2 x_{3}+\frac{1}{9}\left(3 x_{3}+4\right)
+\end{equation*}
+令$x_{4}=\dfrac{1}{9}\left(3 x_{3}+4\right) \in \mathbb{Z}$,则
+\begin{equation*}
+	x_{3}=3 x_{4}-1-\frac{1}{3}
+\end{equation*}
+
+此式表示$x_{3}, x_{4}$不可能同时为整数,所以原不定方程无整数解.
+
+\example 甲种书每本5元,乙种书每本3元,丙种书1元三本,现用100元买这三种书籍共100本,问甲、乙、丙三种书各买多少本?
+
+\solve 设甲、乙、丙三种书籍分别买$x, y, z$本,依题意得方程组
+\begin{equation*}
+	\begin{cases}
+		5 x+3 y+\dfrac{1}{3} z=100 \\
+		x+y+z=100
+	\end{cases}
+\end{equation*}
+消去$z$,得
+\begin{equation}\label{equ3.6}
+	7 x+4 y=100
+\end{equation}
+显然$x=0, y=25$是方程\eqref{equ3.6}的特解,因此,方程\eqref{equ3.6}的所有整数解是
+\begin{equation*}
+	\begin{cases}
+		x=4 t \\
+		y=25-7 t
+	\end{cases} \quad(t=0, \pm 1, \pm 2, \cdots)
+\end{equation*}
+令$x \geqslant 0, y \geqslant 0$,所以$0 \leqslant t \leqslant 3$,即$t$可以取整数值$t_{1}=0, t_{2}=1, t_{3}=2, t_{4}=3$.相应地求得$x, y, z$的值是$(x, y, z)=(0,25,75),(4,18,78)$, $(8,11,81),(12,4,84)$.
+
+\begin{table}[htb]
+	\centering  
+	\begin{tabular}{p{22mm}|p{105.6mm}}
+		\hline 
+		\textbf{作业：}      &   \\ \hline
+		\textbf{教学后记：}  & \vspace{4ex} \\ \hline
+	\end{tabular}
+\end{table}
+
+
